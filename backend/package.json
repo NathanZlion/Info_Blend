@@ -1,0 +1,26 @@
+{
+  "name": "super_secret_hackathon_project_backend",
+  "version": "1.0.0",
+  "description": "InfoBlend",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Nathnael Dereje",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "eventregistry": "^8.11.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.3.2",
+    "validator": "^13.9.0"
+  }
+}
