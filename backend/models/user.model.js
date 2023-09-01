@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {constants} from "../utils/constants.js";
 
 const userSchema = mongoose.Schema({
     userName: {
@@ -16,11 +17,7 @@ const userSchema = mongoose.Schema({
     },
     interests: {
         type: [String],
-        enum: [
-            "Society/Politics", "Health/Nutrition", "Health/Fitness",
-            "Home/Entertainment", "Science/Environment", "Society/Crime",
-            "Society/Law", "Society/Politics"
-        ],
+        enum: constants.eventCategories,
     },
     country: {
         type: String,
