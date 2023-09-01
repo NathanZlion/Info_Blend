@@ -4,6 +4,7 @@ import Validator from "validator";
 import { isStrongPassword } from "../utils/validations/custom_validators.js";
 import jwt from "jsonwebtoken";
 import { getUserFromToken } from "../middleware/auth.js";
+import { constants } from "../utils/constants.js";
 
 
 /**
@@ -199,5 +200,9 @@ export class userControllers {
         } catch (error) {
             res.status(500).json({ message: "Something went wrong while deleting user." });
         }
+    }
+
+    static async getCategories(req, res) {
+        res.status(200).json({ categories: constants.eventCategories });
     }
 }
