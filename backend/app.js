@@ -3,6 +3,9 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors"
 
+//to be deleted
+import './utils/remote-functions.js'
+
 import userRouter from "./routes/user.routes.js";
 import newsRouter from "./routes/news.routes.js";
 
@@ -54,7 +57,7 @@ async function startListening() {
 
 async function startServer() {
     try {
-        await connectToDb();
+        // await connectToDb();
         await startListening();
         console.log(`✔ Server started successfully ✔`);
     } catch (error) {
