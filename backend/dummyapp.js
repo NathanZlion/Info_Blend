@@ -1,13 +1,10 @@
-import mongoose from "mongoose";
 import express from "express";
-import {config} from "dotenv";
+import { config } from "dotenv";
 import cors from "cors"
 
-//to be deleted
-import './utils/remote-functions.js'
-
 import userRouter from "./routes/user.routes.js";
-import newsRouter from "./routes/news.routes.js";
+import dummyNewsRouter from "./routes/dummy.news.routes.js";
+
 
 config();
 
@@ -26,30 +23,16 @@ app.use((req, res, next) => {
 
 // ROUTES
 app.use("/api/v1/user", userRouter);
-app.use("/api/v1/news", newsRouter);
+app.use("/api/v1/news", dummyNewsRouter);
 
 // any origin can access this server
-app.use(cors({
-    origin: "*",
-}));
-
-mongoose.set('strictQuery', false);
-
-async function connectToDb() {
-    try {
-        console.log(`trying to Connect to database...`);
-        await mongoose.connect(process.env.MONGODBURL, { useNewUrlParser: true, useUnifiedTopology: true });
-        console.log(`✔ Connected to database successfully`);
-    } catch (error) {
-        throw new Error(`Database Error: ${error.message}`);
-    }
-}
+app.use(cors({ origin: "*" }));
 
 async function startListening() {
     try {
         console.log(`trying to open port ${process.env.PORT}...`);
         app.listen(process.env.PORT);
-        console.log(`✔ Server listening through port ${process.env.PORT}`);
+        console.log(`- listening through port ${process.env.PORT}`);
     } catch (error) {
         throw new Error(error.message);
     }
@@ -57,9 +40,9 @@ async function startListening() {
 
 async function startServer() {
     try {
-        await connectToDb();
         await startListening();
-        console.log(`-- ✔ Server started successfully ✔ --`);
+        console.log("✔ Dummy Server Started ✔")
+        console.warn(`!!! This is a dummy server and will not provide real data. For test purpose only---`);
     } catch (error) {
         console.log(error.message);
     }
