@@ -8,6 +8,7 @@ import './utils/remote-functions.js'
 
 import userRouter from "./routes/user.routes.js";
 import newsRouter from "./routes/news.routes.js";
+import dummyNewsRouter from "./routes/dummy.news.routes.js";
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 // ROUTES
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/news", newsRouter);
+app.use("/api/v1/dummy/news", dummyNewsRouter);
 
 // any origin can access this server
 app.use(cors({
@@ -59,7 +61,7 @@ async function startServer() {
     try {
         // await connectToDb();
         await startListening();
-        console.log(`✔ Server started successfully ✔`);
+        console.log(`-- ✔ Server started successfully ✔ --`);
     } catch (error) {
         console.log(error.message);
     }
