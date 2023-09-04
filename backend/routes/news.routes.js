@@ -5,11 +5,12 @@ import authMiddleware from "../middleware/auth.js";
 
 const newsRouter = express.Router();
 
-// auth middleware to check if user is logged in
+// auth middleware to authenticated the user
 newsRouter.use(authMiddleware);
 
-newsRouter.get("/", newsController.getCuratedNews);
-newsRouter.get("/search", newsController.searchTopic);
-newsRouter.post("/compare", newsController.compareArticles);
+newsRouter.get("/", newsController.getCuratedEvents);
+newsRouter.get("/search", newsController.searchEventsByTopic);
+newsRouter.get("/compare", newsController.compareArticles);
+newsRouter.get("/:id", newsController.getEventDetail);
 
 export default newsRouter;
