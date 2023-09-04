@@ -80,6 +80,8 @@ async function getEventFeed({ categories, country }) {
   return toEvents(rawEvents)
 }
 
+// getEventFeed({categories: ['politics'], country:'Ethiopia'}).then(a=>console.log(a))
+
 async function getArticles(eventUri) {
   const eventRegistry = new EventRegistry({
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
@@ -128,6 +130,7 @@ async function getArticles(eventUri) {
 
   return articles
 }
+getArticles('eng-8837729').then(a=>console.log(a))
 
 async function searchNews(searchString) {
   const events = await searchForEvents(searchString)
