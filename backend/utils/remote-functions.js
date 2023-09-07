@@ -184,7 +184,13 @@ async function getDetails(eventUri) {
   return { event, articles }
 }
 
-export {getEventFeed, searchForEvents, getDetails }
+
+async function compareArticles(article1, article2) {
+  // Not implemented yet
+}
+
+
+export { getEventFeed, searchForEvents, getDetails, compareArticles };
 
 // searchForEvents('ukraine war').then(k=>console.log(k))
 // getArticles('eng-8837729').then(a=>console.log(a))
