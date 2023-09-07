@@ -1,16 +1,27 @@
+import { getDetails, getEventFeed, searchForEvents } from "../utils/remote-functions";
 
 /**
- * A class to handle all todo related controllers
+ * A class to handle all news related controllers.
  */
 export class newsController {
     /**
      * @param {*} req 
-     * @param {*} res 
+     * @param {*} res
      * @returns a list of curated events for the user based on the user's profile.
     */
     static async getCuratedEvents(req, res) {
-        res.status(200).json({ "message": "success" });
+        const user = req.user;
+        const categories = user.interests;
+        const country = user.country;
+        try {
+            const events = await getEventFeed(categories, country);
+            res.status(200).json({ "message": "success", "events": events });
+        } catch (error) {
+            res.status(500)
+                .json({ "message": "Something wrong while preparing curated news for you." });
+        }
     }
+
 
     /**
      * @param {*} req 
@@ -19,8 +30,35 @@ export class newsController {
      * query inside the request topic
      */
     static async searchEventsByTopic(req, res) {
+
         const topic = req.query.topic;
-        res.status(200).json({ "message": `Search topic = ${topic}` })
+        try {
+            const events = await searchForEvents(topic);
+            res.status(200).
+                json({ "message": "Successfull searched topic", "events": events });
+        } catch (error) {
+            res.status(500)
+                .json({ "message": "Some thing went wrong while searching for the topic." });
+        }
+    }
+
+
+    /**
+     * @param {*} req 
+     * @param {*} res 
+     * @returns returns a detail about the event and the articles it has too with their content
+     */
+    static async getEventDetail(req, res) {
+
+        const eventUri = req.query.eventUri;
+        try {
+            const event = await getDetails(eventUri);
+            res.status(200).
+                json({ "message": "Successfull searched topic", "events": event });
+        } catch (error) {
+            res.status(500)
+                .json({ "message": "Some thing went wrong while getting event detail." });
+        }
     }
 
     /**
@@ -29,15 +67,15 @@ export class newsController {
      * @returns a comparision between 2 articles passed into is as requests.
      */
     static async compareArticles(req, res) {
-        res.status(200).json({"message":"comparing articles"})
-    }
 
-    /**
-     * @param {*} req 
-     * @param {*} res 
-     * @returns returns a detail about the event and the articles it has too with their content
-     */
-    static async getEventDetail(req, res) {
-        res.status(200).json({ "message": `search result for id = ${req.params.id}` })
+        const {article1, article2} = req.body;
+        try {
+            const comparison = await getDetails(article1, article2);
+            res.status(200).
+                json({ "message": "Successfully compared articles.", "comparison": comparison });
+        } catch (error) {
+            res.status(500)
+                .json({ "message": "Some thing went wrong while making article comparison." });
+        }
     }
 }
