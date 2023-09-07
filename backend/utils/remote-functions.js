@@ -4,6 +4,11 @@ import {
   QueryItems,
   ReturnInfo,
   QueryEventArticlesIter,
+  QueryEvent,
+  RequestEventInfo,
+  EventInfoFlags,
+  ArticleInfoFlags,
+  SourceInfoFlags,
 } from 'eventregistry'
 
 import { config } from 'dotenv'
@@ -26,6 +31,10 @@ async function searchForEvents(searchString) {
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
   })
 
+  const returnInfo = new ReturnInfo({
+    eventInfo: new EventInfoFlags({ imageCount: 3 }),
+  })
+
   const conceptUris = await Promise.all(
     searchString.split(' ').map((word) => eventRegistry.getConceptUri(word))
   )
@@ -33,7 +42,7 @@ async function searchForEvents(searchString) {
   const queryEventsIter = new QueryEventsIter(eventRegistry, {
     sortBy: 'rel',
     lang: 'eng',
-    returnInfo: new ReturnInfo(),
+    returnInfo: returnInfo,
     maxItems: 7,
     conceptUri: QueryItems.OR(conceptUris),
   })
@@ -53,6 +62,9 @@ async function getEventFeed({ categories, country }) {
   const eventRegistry = new EventRegistry({
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
   })
+  const returnInfo = new ReturnInfo({
+    eventInfo: new EventInfoFlags({ imageCount: 3 }),
+  })
 
   const categoryUris = await Promise.all(
     categories.map((name) => eventRegistry.getCategoryUri(name))
@@ -62,7 +74,7 @@ async function getEventFeed({ categories, country }) {
 
   const queryEventsIter = new QueryEventsIter(eventRegistry, {
     sortBy: 'rel',
-    returnInfo: new ReturnInfo(),
+    returnInfo: returnInfo,
     lang: 'eng',
     minArticlesInEvent: 5,
     locationUri: countryUri,
@@ -82,9 +94,40 @@ async function getEventFeed({ categories, country }) {
 
 // getEventFeed({categories: ['politics'], country:'Ethiopia'}).then(a=>console.log(a))
 
+async function getEvent(eventUri) {
+  const eventRegistry = new EventRegistry({
+    apiKey: process.env.EVENT_REGISTRY_API_KEY,
+  })
+  const returnInfo = new ReturnInfo({
+    eventInfo: new EventInfoFlags({ imageCount: 3 }),
+  })
+
+  const queryEvent = new QueryEvent(eventUri)
+  queryEvent.setRequestedResult(new RequestEventInfo(returnInfo))
+  let result = await eventRegistry.execQuery(queryEvent)
+  console.log(result)
+  result = result[eventUri].info
+
+  // console.log(result[eventUri])
+  // console.log(JSON.stringify(result))
+  return {
+    uri: result.uri,
+    title: result.title.eng,
+    summary: result.summary.eng,
+    date: result.eventDate,
+    imageUrls: result.images,
+  }
+}
+
+// getEvent('eng-8837729').then(k=>console.log(k))
+
 async function getArticles(eventUri) {
   const eventRegistry = new EventRegistry({
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
+  })
+
+  const returnInfo = new ReturnInfo({
+    sourceInfo: new SourceInfoFlags({ image: true }),
   })
 
   const queryEventArticlesIter = new QueryEventArticlesIter(
@@ -93,8 +136,8 @@ async function getArticles(eventUri) {
     {
       lang: 'eng',
       sortBy: 'cosSim',
+      returnInfo: returnInfo,
       articleBatchSize: 5,
-      returnInfo: new ReturnInfo(),
     }
   )
 
@@ -130,33 +173,21 @@ async function getArticles(eventUri) {
 
   return articles
 }
-getArticles('eng-8837729').then(a=>console.log(a))
+// getArticles('eng-8837729').then(a=>console.log(a))
 
-async function searchNews(searchString) {
-  const events = await searchForEvents(searchString)
-  const newsPromises = events.map(async (event) => {
-    const articles = await getArticles(event.uri)
-    const news = { event, articles }
-    return news
-  })
-  const newsList = await Promise.all(newsPromises)
-  return newsList
+async function getDetails(eventUri) {
+  const [event, articles] = await Promise.all([
+    await getEvent(eventUri),
+    await getArticles(eventUri),
+  ])
+
+  return { event, articles }
 }
 
-async function getNewsFeed({ categories, country }) {
-  const events = await getEventFeed({ categories, country })
-  const newsPromises = events.map(async (event) => {
-    const articles = await getArticles(event.uri)
-    const news = { event, articles }
-    return news
-  })
-  const newsList = await Promise.all(newsPromises)
-  return newsList
-}
+export {getEventFeed, searchForEvents, getDetails }
 
-export { searchNews, getNewsFeed }
+// searchForEvents('ukraine war').then(k=>console.log(k))
+// getArticles('eng-8837729').then(a=>console.log(a))
 
-// searchNews('ukraine war').then((n) => console.log(n))
-// getNewsFeed({ categories: ['politics', 'sport'], country: 'Ethiopia' }).then(
-//   (n) => console.log(n)
-// )
+
+// getDetails('eng-8837729').then(a=>console.log(JSON.stringify(a)))

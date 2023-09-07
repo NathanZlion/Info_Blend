@@ -1,94 +1,108 @@
-export const curatedEventsList = {
-    //I have to fix image uris
-  events: [
-    {
-      uri: 'eng-8843762',
-      title: 'Ethiopia shaken by a new and growing rebellion in Amhara',
-      summary:
-        "Two weeks after irregular militia fighters called the Fano seized several towns and cities in Amhara, Ethiopia's second-biggest region, the barricades have been cleared from the streets and an uneasy calm has been restored by the federal military. The fighting was the fiercest to grip Ethiopia since a November ceasefire ended the two-year conflict in the next-door region of Tigray.\n" +
-        '\n' +
-        'Prime Minister Abiy Ahmed had set his sights on welcoming back foreign investors and kickstarting the economy. Inst',
-      date: '2023-08-20',
-      imageUrls: undefined,
-    },
-    {
-      uri: 'eng-8822266',
-      title: 'FM Park Seeks Support for Expo Bid in Talks with Ethiopian PM ',
-      summary:
-        "Foreign Minister Park Jin held talks with Ethiopian Prime Minister Abiy Ahmed Ali in Addis Ababa on Wednesday and asked for the African nation's support for South Korea's bid to host the 2030 World Expo.\n" +
-        '\n' +
-        "Seoul's top diplomat stressed that Ethiopia, where the African Union is headquartered, holds pivotal status in South Korea's diplomacy with the continent and proposed advancing bilateral relations into a strategic partnership.\n" +
-        '\n' +
-        "Park said the expo bid is to share Korea's development experience wi",
-      date: '2023-08-08',
-      imageUrls: undefined,
-    },
-    {
-      uri: 'eng-8842491',
-      title:
-        "Ethiopia's Tigray crisis: Deaths from starvation after aid halted - official",
-      summary:
-        "At least 1,400 people have starved to death in Ethiopia's northern Tigray since food aid was suspended because it was being stolen, an official has said.\n" +
-        '\n' +
-        "The UN's World Food Programme (WFP) and the US's leading aid agency halted food aid to Tigray about four months ago.\n" +
-        '\n' +
-        'A subsequent investigation by Tigrayan authorities found that almost 500 people were involved in the theft, the official told the BBC.\n' +
-        '\n' +
-        'Tigray was hit by a brutal conflict in 2020, causing famine-like conditions.\n' +
-        '\n' +
-        'The conflict e',
-      date: '2023-08-18',
-      imageUrls: undefined,
-    },
-    {
-      uri: 'eng-8828376',
-      title:
-        'Biden agency to consult with left-wing groups on boosting DEI in Ethiopia',
-      summary:
-        'The Biden administration is soliciting responses on how it can boost left-leaning diversity, equity, inclusion and accessibility practices at an agency in the landlocked African country of Ethiopia, documents show.\n' +
-        '\n' +
-        'Championing DEI has been a foremost concern of the federal government since President Joe Biden took office, with the president on his first day signing an executive order directing agencies to conduct equity assessments due to the alleged effects of "systemic racism." Now, the United',
-      date: '2023-08-10',
-      imageUrls: undefined,
-    },
-    {
-      uri: 'eng-8820738',
-      title:
-        'Israel rescues more than 200 citizens and local Jews from Ethiopia conflict areas',
-      summary:
-        'Israelis and Ethiopian Jews board flights from Gondar and Bahir Dar to Addis Ababa, part of the Israeli government rescue operation amid fighting in northern Ethiopia August 10, 2023 (Israel Embassy in Addis Ababa)\n' +
-        '\n' +
-        "Israel extracts some 200 citizens and local Jews from conflict zones in Ethiopia, the Foreign Ministry and Prime Minister's Office announce.\n" +
-        '\n' +
-        "Amid fighting in northern Ethiopia's Amhara region, Israel rescues 174 Israelis and Ethiopians eligible to make aliyah from the city of Gondar ",
-      date: '2023-08-08',
-      imageUrls: undefined,
-    },
-    {
-      uri: 'eng-8837729',
-      title: "AU voices 'great concern' over deadly Libya fighting",
-      summary:
-        'The African Union on Thursday voiced "great concern" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts.\n' +
-        '\n' +
-        'Fifty-five people have been killed and 146 wounded in the worst clashes in the capital Tripoli in a year which erupted on Monday night, Libyan media reported.\n' +
-        '\n' +
-        'AU Commission head Moussa Faki Mahamat "is following with great concern the developments of the security situation in Tripoli, which have ',
-      date: '2023-08-17',
-      imageUrls: undefined,
-    },
-    {
-      uri: 'eng-8840169',
-      title: "What Has Sparked Clashes In Ethiopia's Amhara Region?",
-      summary:
-        'Months after end of devastating Tigray conflict, militiamen and the army are fighting in Ethiopiaâ€™s second largest region.\n' +
-        '\n' +
-        'For weeks now, heavy clashes have been raging in Amhara, a vitally important region that is also the second-biggest in Ethiopia.\n' +
-        '\n' +
-        'The new conflict comes barely nine months after the end of two years of devastating fighting in the northern Tigray region.\n' +
-        '\n' +
-        'The fighting this time is between the Ethiopian army and a militia group known as the Fano, which supported the gov',
-      date: '2023-08-16',
-      imageUrls: undefined,
-    },
-  ],
-}
+export const curatedEventsList = 
+[
+  {
+    uri: 'eng-8876666',
+    title: 'Exploded Russian drone fragments found in Romania',
+    summary: 'Nato member state Romania said what appeared to be fragments of a Russian drone had been found on its territory.\n' +
+      '\n' +
+      'Angel Tilvar, the Romanian defence minister, told local news channel Antena 3 CNN that parts of what was most likely a drone were discovered in the eastern Tulcea county.\n' +
+      '\n' +
+      'The area is part of the Danube delta, which forms a natural border between Romania and war-torn Ukraine.\n' +
+      '\n' +
+      '"I confirm that in this area, pieces that may be of a drone were found," he said, adding that the pieces didn',
+    date: '2023-09-04',
+    imageUrls: [
+      'https://www.reuters.com/pf/resources/images/reuters/reuters-default.webp?d=155',
+      'https://img.ilgcdn.com/sites/default/files/styles/social/public/foto/2023/09/04/1693822052-droni-russi-romania.jpg?_=1693822052',
+      'https://www.reuters.com/resizer/HaYgIHD2cqS4bDG4388nLi9LFdQ=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/IN4V45CQP5JUHAXSXUIXLIUEEE.jpg'
+    ]
+  },
+  {
+    uri: 'eng-8876429',
+    title: "Ukraine's defence minister resigns after Zelenskiy removes him from post",
+    summary: 'Oleksii Reznikov, whose ministry has been hit by corruption scandals, confirms in letter he is stepping down\n' +
+      '\n' +
+      "Ukraine's defence minister has submitted his resignation letter after Volodymyr Zelenskiy removed him from his post on Sunday night, in the biggest reshuffle by the president of his government team since Vladimir Putin's full-scale invasion.\n" +
+      '\n' +
+      "Oleksii Reznikov, whose ministry has been hit by corruption scandals, said he had written to the chair of Ukraine's parliament, Ruslan Stefanchuk, c",
+    date: '2023-09-04',
+    imageUrls: [
+      'https://static.cnews.fr/sites/default/files/ukraine_1_64f58fde73e9f_0.jpeg',
+      'https://media.breitbart.com/media/2023/09/GettyImages-1536747675-e1693924323825.jpg',
+      'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HDMKFK6LTOE2P2JSHCZQVADW3A_size-normalized.jpg&w=1440'
+    ]
+  },
+  {
+    uri: 'eng-8875046',
+    title: 'Russia attacks Ukraine grain port ahead of Putin-Erdogan talks',
+    summary: "Blasts reported near Ukraine's Izmail port on the Danube River as Russian and Turkish leaders prepare to hold talks on Ukrainian grain exports.\n" +
+      '\n' +
+      "Russia has launched an air attack on one of Ukraine's biggest grain exporting ports, hours before Russian President Vladimir Putin and his Turkish counterpart, Recep Tayyip Erdogan, were due to hold talks.\n" +
+      '\n' +
+      "Ukraine's Air Force on Monday urged residents of Izmail port, one of Ukraine's two major grain-exporting ports on the Danube River in the Odesa regio",
+    date: '2023-09-03',
+    imageUrls: [
+      'https://assets.zerohedge.com/s3fs-public/styles/16_9_max_700/public/2023-09/putinerdsochi1.jpg?h=7dd2c90c&itok=ZccNo_l-',
+      'https://d3i6fh83elv35t.cloudfront.net/static/2023/09/2022-09-16T143106Z_1689410715_RC2EIW9OM3U5_RTRMADP_3_UZBEKISTAN-SCO-ERDOGAN-PUTIN-1024x714.jpg',
+      'https://media.breitbart.com/media/2023/09/GettyImages-1205321049-2.jpg'
+    ]
+  },
+  {
+    uri: 'eng-8843184',
+    title: 'The Netherlands and Denmark will give F-16 fighter jets to Ukraine, the Dutch prime minister says',
+    summary: "EINDHOVEN, Netherlands (AP) -- The Netherlands and Denmark announced Sunday they will give F-16 warplanes to Ukraine, in a long-awaited announcement that Ukrainian President Volodymyr Zelenskyy called an important motivation for his country's forces that are embroiled in a difficult counteroffensive against Russia.\n" +
+      '\n' +
+      'The timeline depends on how soon Ukrainian crews and infrastructure are ready for the powerful U.S.-made jets, Dutch Prime Minister Mark Rutte told Zelenskyy as the two visited a Dutc',
+    date: '2023-08-21',
+    imageUrls: [
+      'https://dims.apnews.com/dims4/default/d4ca6c7/2147483647/strip/true/crop/8640x4860+0+450/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F89%2Fe6%2Fd34b82eb521d8908b37b2cd7de28%2Fdc4b4a5602f84c79aad9e65fed21fc7c',
+      'https://media.breitbart.com/media/2023/08/GettyImages-1610888815-e1692720714209.jpg',
+      'https://assets.zerohedge.com/s3fs-public/styles/16_9_max_700/public/2023-08/zdn.jpg?itok=aJ8ej_G1'
+    ]
+  },
+  {
+    uri: 'eng-8838895',
+    title: "In Anne Frank's Amsterdam, Ukrainian children's war diaries go on...",
+    summary: 'AMSTERDAM (AP) - The city where Anne Frank wrote her World War II diary while hiding with her family from the brutal Nazi occupation is hosting an exhibition about the Ukraine war with grim echoes of her plight more than three quarters of a century later.\n' +
+      '\n' +
+      'The exhibition that opened at Amsterdam City Hall on Thursday offers a vision of the war in Ukraine as experienced by children caught in the devastating conflict.\n' +
+      '\n' +
+      `"This exhibition is about the pain through the children's eyes," Khrystyna Khran`,
+    date: '2023-08-17',
+    imageUrls: [
+      'https://bloximages.newyork1.vip.townnews.com/newsadvance.com/content/tncms/assets/v3/editorial/9/89/9890d356-4045-5839-8c8d-60287e95bdae/64df8f9ea2e40.preview.jpg?crop=1919%2C1007%2C0%2C36&resize=438%2C230&order=crop%2Cresize',
+      'https://bloximages.chicago2.vip.townnews.com/lacrossetribune.com/content/tncms/assets/v3/editorial/c/21/c21d093a-9149-5803-9fd4-ec76e0ca0e94/64df8f9b03bd4.preview.jpg?crop=1919%2C1007%2C0%2C36&resize=438%2C230&order=crop%2Cresize',
+      'https://bloximages.newyork1.vip.townnews.com/journalnow.com/content/tncms/assets/v3/editorial/4/41/4414cc2f-2d32-56ca-9a1a-8089e6780fa9/64df8f997b042.preview.jpg?crop=1919%2C1007%2C0%2C36&resize=438%2C230&order=crop%2Cresize'
+    ]
+  },
+  {
+    uri: 'eng-8864862',
+    title: 'Airport in western Russia attacked by drones, aircraft damaged: Reports',
+    summary: 'State news agency TASS cited reports that four Ilyushin Il-76 heavy transport planes were damaged in the drone attack.\n' +
+      '\n' +
+      "Russian transport aircraft have been reported damaged in a drone attack on an airport in Russia's western city of Pskov - located near the borders of Latvia and Estonia - where explosions, a large blaze and gunfire were reported, a local official and state media said.\n" +
+      '\n' +
+      "Russia's state-run TASS news agency, quoting emergency services, said early on Wednesday morning that four Il-7",
+    date: '2023-08-30',
+    imageUrls: [
+      'https://koreatimes-bucket.s3.ap-northeast-2.amazonaws.com/IMAGE/upload/newsV2/images/202308/feccc0c9a90647358e95bfdb48c530be.jpg',
+      'https://i.guim.co.uk/img/media/8ad02abc5855caa63419463e0d9b71848d67dafd/0_338_1334_800/master/1334.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&s=b256db9dc4de6640addc46b90866dbdb',
+      'https://www.aljazeera.com/wp-content/uploads/2023/08/Russiacrop-1693354338.jpg?resize=1200%2C675'
+    ]
+  },
+  {
+    uri: 'eng-8842461',
+    title: "Putin's forces kill seven in Chernihiv strike as drone crashes in Kursk- live",
+    summary: '{{ #verifyErrors }}{{ message }}{{ /verifyErrors }}{{ ^verifyErrors }}Something went wrong. Please try again later{{ /verifyErrors }}\n' +
+      '\n' +
+      'Ukraine has said that a Russian missile strike in the northern city of Chernihiv has killed seven people and injured 144 others, as five people were injured in a Ukrainian drone in the Russian city of Kursk.\n' +
+      '\n' +
+      'Around 15 children, including a six-year-old girl, and 15 police officers were among the dead following the strike, which hit a central square in the histori',
+    date: '2023-08-20',
+    imageUrls: [
+      'https://static.independent.co.uk/2023/08/22/08/SEI168371015.jpg?quality=75&width=1200&auto=webp',
+      'https://image.cnbcfm.com/api/v1/image/107290492-1692773570821-gettyimages-1617992227-AFP_33RY92Q.jpeg?v=1692774399&w=1920&h=1080',
+      'https://static.independent.co.uk/2023/08/19/13/cherniv.jpg?quality=75&width=1200&auto=webp'
+    ]
+  }
+]
