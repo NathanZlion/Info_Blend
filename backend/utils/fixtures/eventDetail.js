@@ -1,5 +1,4 @@
 export const eventDetail = {
-  //I have to fix imageUrls and source logo url
   details: {
 
     event: {
@@ -10,7 +9,7 @@ export const eventDetail = {
         '\n' +
         'Prime Minister Abiy Ahmed had set his sights on welcoming back foreign investors and kickstarting the economy. Inst',
       date: '2023-08-20',
-      imageUrls: undefined,
+      imageUrls: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     articles: [
       {
@@ -32,7 +31,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '09:54:24',
         sourceName: 'Punch Newspapers',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7681348346',
@@ -52,7 +51,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '09:13:07',
         sourceName: 'Zawya.com',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7681730620',
@@ -76,7 +75,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '14:17:56',
         sourceName: 'english.news.cn',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7681711650',
@@ -107,7 +106,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '14:03:23',
         sourceName: 'The South African',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7681329471',
@@ -123,7 +122,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '09:01:19',
         sourceName: 'Social News XYZ',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7683332489',
@@ -139,7 +138,7 @@ export const eventDetail = {
         date: '2023-08-18',
         time: '17:43:30',
         sourceName: 'South Africa Today',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7681717616',
@@ -155,7 +154,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '14:06:06',
         sourceName: 'nampa.org',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7681936487',
@@ -169,7 +168,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '17:16:07',
         sourceName: 'Breaking News',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7681789206',
@@ -196,7 +195,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '15:06:40',
         sourceName: 'Standard Digital News - Kenya',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
       {
         uri: '7682054770',
@@ -213,7 +212,7 @@ export const eventDetail = {
         date: '2023-08-17',
         time: '19:22:19',
         sourceName: 'Agencia Informativa Latinamericana Prensa Latina',
-        sourceLogoUrl: undefined,
+        sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
       },
     ],
   },
