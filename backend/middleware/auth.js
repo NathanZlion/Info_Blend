@@ -23,7 +23,7 @@ export async function getUserFromToken(req, res) {
     const token = req.headers.authorization.split(" ")[1];
     // checks if token is present inside the header
     if (!token) {
-        return res.status(401).json({ message: "Unauthorized, no token found." });
+        return res.status(400).json({ message: "Unauthorized, no token found." });
     }
 
     const { _id } = jwt.verify(token, process.env.JWT_SECRET);
