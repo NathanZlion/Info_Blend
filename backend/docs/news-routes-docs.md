@@ -309,7 +309,6 @@ _Not Implemeted Yet but hypotetically this is how we intend it to behave_
   - The response: A comparison of the 2 articles.
 
 The request body should pass the articles that need to be compared as follows;
-*response body*
 ```json
 {
   "article1": {
@@ -331,6 +330,7 @@ The request body should pass the articles that need to be compared as follows;
 ```
 
 Sample Response looks like this:
+*response body*
 ```json
 {
   "message": "Successfully compared articles.",
