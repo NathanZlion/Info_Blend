@@ -1,4 +1,4 @@
-import { getDetails, getEventFeed, searchForEvents } from "../utils/remote-functions";
+import { compareArticles, getDetails, getEventFeed, searchForEvents } from "../utils/remote-functions";
 
 /**
  * A class to handle all news related controllers.
@@ -31,11 +31,11 @@ export class newsController {
      */
     static async searchEventsByTopic(req, res) {
 
-        const topic = req.query.topic;
+        const topic = req.query.q;
         try {
             const events = await searchForEvents(topic);
             res.status(200).
-                json({ "message": "Successfull searched topic", "events": events });
+                json({ "message": "Successfull searched topic", "query": topic, "events": events });
         } catch (error) {
             res.status(500)
                 .json({ "message": "Some thing went wrong while searching for the topic." });
@@ -52,15 +52,18 @@ export class newsController {
 
         const eventUri = req.query.eventUri;
         try {
-            const event = await getDetails(eventUri);
-            res.status(200).
-                json({ "message": "Successfull searched topic", "events": event });
+            const { event, articles } = await getDetails(eventUri);
+            res.status(200)
+                .json({
+                    "message": "Successfully got event detail",
+                    "event": event,
+                    "articles": articles
+                });
         } catch (error) {
             res.status(500)
                 .json({ "message": "Some thing went wrong while getting event detail." });
         }
     }
-
     /**
      * @param {*} req 
      * @param {*} res 
@@ -68,9 +71,9 @@ export class newsController {
      */
     static async compareArticles(req, res) {
 
-        const {article1, article2} = req.body;
+        const { article1, article2 } = req.body;
         try {
-            const comparison = await getDetails(article1, article2);
+            const comparison = await compareArticles(article1, article2);
             res.status(200).
                 json({ "message": "Successfully compared articles.", "comparison": comparison });
         } catch (error) {
