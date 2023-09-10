@@ -167,7 +167,6 @@ export class userControllers {
                 existingUser.country = country;
 
             await existingUser.save();
-            // res.status(200).json({ user: { userName: existingUser.userName, email: existingUser.email } });
 
             res.status(200).json({
                 token, user: {
@@ -193,7 +192,7 @@ export class userControllers {
         try {
             const existingUser = await getUserFromToken(req, res);
             if (!existingUser)
-                return res.status(401).json({ message: "Unauthorized" });
+                return res.status(400).json({ message: "Unauthorized" });
 
             await User.findByIdAndDelete(existingUser._id);
             res.status(200).json({ message: "User deleted successfully" });
@@ -203,6 +202,10 @@ export class userControllers {
     }
 
     static async getCategories(req, res) {
-        res.status(200).json({ categories: constants.eventCategories });
+        try {
+            res.status(200).json({ categories: constants.eventCategories });
+        } catch (error) {
+            res.status(500).json({ message: "Something went wrong while getting list of categories of interest" });
+        }
     }
 }
