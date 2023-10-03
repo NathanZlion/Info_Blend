@@ -1,4 +1,7 @@
-export const constants = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.constants = void 0;
+exports.constants = {
     "eventCategories": [
         "Society/Politics",
         "Health/Nutrition",
@@ -9,6 +12,4 @@ export const constants = {
         "Society/Law",
         "Society/Politics"
     ]
-}
-
-
+};

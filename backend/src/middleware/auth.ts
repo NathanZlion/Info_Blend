@@ -1,7 +1,7 @@
 
 import jwt from 'jsonwebtoken';
 import { Types } from 'mongoose';
-import Users from '../models/user.model.js';
+import Users from '../src/models/user.model.js';
 
 const auth = async (req, res, next) => {
     try {
