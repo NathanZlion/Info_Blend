@@ -9,7 +9,7 @@
  * 
  * A function to check if a password is strong enough
  */
-export function isStrongPassword(password) {
+export function isStrongPassword(password: string): boolean {
     // criteria: Password must be at least 8 characters long
     if (password.length < 8) {
         return false;

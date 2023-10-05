@@ -11,11 +11,12 @@ import {
 } from 'eventregistry'
 
 import { config } from 'dotenv'
+import { Data } from 'eventregistry/dist/data';
 
 config()
 
 
-async function searchForEvents(searchString) {
+async function searchForEvents(searchString: string) {
   const eventRegistry = new EventRegistry({
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
   });
@@ -37,7 +38,7 @@ async function searchForEvents(searchString) {
   });
 
   const rawEvents = await new Promise((res, rej) => {
-    const events = []
+    const events: Data.Event[] = []
     queryEventsIter.execQuery(
       (event) => events.push(event),
       () => res(events)
@@ -47,7 +48,7 @@ async function searchForEvents(searchString) {
   return toEvents(rawEvents);
 }
 
-async function getEventFeed({ categories, country }) {
+async function getEventFeed({ categories, country }: { categories: string[], country: string }) {
   const eventRegistry = new EventRegistry({
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
   });
@@ -57,7 +58,7 @@ async function getEventFeed({ categories, country }) {
   });
 
   const categoryUris = await Promise.all(
-    categories.map((name) => eventRegistry.getCategoryUri(name))
+    categories.map((name: string) => eventRegistry.getCategoryUri(name))
   );
 
   const countryUri = await eventRegistry.getLocationUri(country);
@@ -72,7 +73,7 @@ async function getEventFeed({ categories, country }) {
   });
 
   const rawEvents = await new Promise((res, rej) => {
-    const rawEvents = []
+    const rawEvents: Data.Event[] = []
     queryEventsIter.execQuery(
       (event) => rawEvents.push(event),
       () => res(rawEvents)
@@ -82,7 +83,7 @@ async function getEventFeed({ categories, country }) {
   return toEvents(rawEvents);
 }
 
-async function getEvent(eventUri) {
+async function getEvent(eventUri: string) {
   const eventRegistry = new EventRegistry({
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
   });
@@ -106,7 +107,7 @@ async function getEvent(eventUri) {
 }
 
 
-async function getArticles(eventUri) {
+async function getArticles(eventUri: string) {
   const eventRegistry = new EventRegistry({
     apiKey: process.env.EVENT_REGISTRY_API_KEY,
   });
@@ -126,8 +127,8 @@ async function getArticles(eventUri) {
     }
   );
 
-  let rawArticles = await new Promise((res, rej) => {
-    const rawArticles = []
+  let rawArticles: Data.Article[] = await new Promise((res, rej) => {
+    const rawArticles: Data.Article[] = []
     queryEventArticlesIter.execQuery(
       (article) => rawArticles.push(article),
       () => res(rawArticles)
@@ -160,7 +161,7 @@ async function getArticles(eventUri) {
 }
 
 
-async function getDetails(eventUri) {
+async function getDetails(eventUri: string) {
   const [event, articles] = await Promise.all([
     await getEvent(eventUri),
     await getArticles(eventUri),
@@ -174,7 +175,7 @@ async function compareArticles(article1, article2) {
   // Not implemented yet
 }
 
-function toEvents(rawEvents) {
+function toEvents(rawEvents: Data.Event[]) {
   const events = rawEvents.map((event) => ({
     uri: event.uri,
     title: event.title.eng,
