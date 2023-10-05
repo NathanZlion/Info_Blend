@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const constants_js_1 = require("../utils/constants.js");
-const userSchema = mongoose_1.default.Schema({
+const userSchema = new mongoose_1.default.Schema({
     userName: {
         type: String,
         required: false,

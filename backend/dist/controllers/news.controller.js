@@ -22,11 +22,11 @@ class newsController {
     */
     static getCuratedEvents(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const user = req.user;
+            const user = res.locals.user;
             const categories = user.interests;
             const country = user.country;
             try {
-                const events = yield (0, remote_functions_1.getEventFeed)(categories, country);
+                const events = yield (0, remote_functions_1.getEventFeed)({ categories, country });
                 res.status(200).json({ "message": "success", "events": events });
             }
             catch (error) {

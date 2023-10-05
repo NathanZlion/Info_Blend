@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const news_controller_js_1 = require("../controllers/news.controller.js");
 const express_1 = __importDefault(require("express"));
-const auth_js_1 = __importDefault(require("../../middleware/auth.js"));
+const auth_js_1 = __importDefault(require("../middleware/auth.js"));
 const newsRouter = express_1.default.Router();
 // auth middleware to authenticated the user
 newsRouter.use(auth_js_1.default);

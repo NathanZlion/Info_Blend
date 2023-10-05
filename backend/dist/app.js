@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const express_1 = __importDefault(require("express"));
-const dotenv_1 = require("dotenv");
 const cors_1 = __importDefault(require("cors"));
+const dotenv_1 = require("dotenv");
 //to be deleted
 require("./utils/remote-functions.js");
 const user_routes_js_1 = __importDefault(require("./routes/user.routes.js"));
@@ -68,7 +68,7 @@ function startServer() {
         try {
             yield connectToDb();
             yield startListening();
-            console.log(`-- ✔ Server started successfully ✔ --`);
+            console.warn(`-- ✔ Server started successfully ✔ --`);
         }
         catch (error) {
             console.log(error.message);
