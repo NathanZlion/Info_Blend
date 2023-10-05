@@ -1,7 +1,7 @@
 import { DummyNewsController } from '../controllers/dummy.news.controller.js';
-import express from "express";
+import express, { Router } from "express";
 
-const dummyNewsRouter = express.Router();
+const dummyNewsRouter: Router = express.Router();
 
 dummyNewsRouter.get("/", DummyNewsController.getCuratedEvents);
 dummyNewsRouter.get("/search", DummyNewsController.searchEventsByTopic);

@@ -1,9 +1,9 @@
 
 import { newsController } from '../controllers/news.controller.js';
-import express from "express";
-import authMiddleware from "../../middleware/auth.js";
+import express, { Router } from "express";
+import authMiddleware from "../middleware/auth.js";
 
-const newsRouter = express.Router();
+const newsRouter: Router = express.Router();
 
 // auth middleware to authenticated the user
 newsRouter.use(authMiddleware);
