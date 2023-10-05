@@ -1,7 +1,8 @@
+import { Request, Response, NextFunction, Express } from "express";
 import mongoose from "mongoose";
 import express from "express";
-import {config} from "dotenv";
 import cors from "cors"
+import { config as configDotenv } from "dotenv";
 
 //to be deleted
 import './utils/remote-functions.js'
@@ -9,15 +10,15 @@ import './utils/remote-functions.js'
 import userRouter from "./routes/user.routes.js";
 import newsRouter from "./routes/news.routes.js";
 
-config();
+configDotenv();
 
-const app = express();
+const app: Express = express();
 
 // MIDDLEWARES, PARSERS TO USE JSON
 app.use(express.json());
 
 // SET HEADERS
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
@@ -38,9 +39,12 @@ mongoose.set('strictQuery', false);
 async function connectToDb() {
     try {
         console.log(`trying to Connect to database...`);
-        await mongoose.connect(process.env.MONGODBURL, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(
+            process.env.MONGODBURL!,
+            { useNewUrlParser: true, useUnifiedTopology: true } as mongoose.ConnectOptions
+        );
         console.log(`✔ Connected to database successfully`);
-    } catch (error) {
+    } catch (error: any) {
         throw new Error(`Database Error: ${error.message}`);
     }
 }
@@ -50,7 +54,7 @@ async function startListening() {
         console.log(`trying to open port ${process.env.PORT}...`);
         app.listen(process.env.PORT);
         console.log(`✔ Server listening through port ${process.env.PORT}`);
-    } catch (error) {
+    } catch (error: any) {
         throw new Error(error.message);
     }
 }
@@ -59,8 +63,8 @@ async function startServer() {
     try {
         await connectToDb();
         await startListening();
-        console.log(`-- ✔ Server started successfully ✔ --`);
-    } catch (error) {
+        console.warn(`-- ✔ Server started successfully ✔ --`);
+    } catch (error: any) {
         console.log(error.message);
     }
 }
