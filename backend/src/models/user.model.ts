@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { constants } from "../utils/constants.js";
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: false,
