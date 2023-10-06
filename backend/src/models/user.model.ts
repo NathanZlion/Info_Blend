@@ -1,5 +1,14 @@
-import mongoose from "mongoose";
+import mongoose, {Document} from "mongoose";
 import { constants } from "../utils/constants.js";
+
+export interface UserDocument extends Document{
+    userName: string | undefined,
+    password: string ,
+    email: string,
+    interests:[string] | undefined,
+    country:string|undefined,
+    lastChecked:Date|undefined, 
+}
 
 const userSchema = new mongoose.Schema({
     userName: {
@@ -31,6 +40,5 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-const User = mongoose.model("User", userSchema);
-
+const User = mongoose.model<UserDocument>("User", userSchema);
 export default User;

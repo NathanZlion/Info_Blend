@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 import { Response, Request, NextFunction } from "express";
 import { Types } from 'mongoose';
-import Users from '../models/user.model.js';
+import Users, { UserDocument } from '../models/user.model.js';
 
 const auth = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -18,11 +18,8 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
     }
 }
 
-export async function getUserFromToken(req: Request, res: Response) {
+export async function getUserFromToken(req: Request, res: Response) : Promise<UserDocument|null>{
     const token: string = req.headers.authorization!.split(" ")[1];
-
-    if (!token)
-        return res.status(400).json({ message: "Unauthorized, no token found." });
 
     const { _id }: jwt.JwtPayload = jwt.verify(token, process.env.JWT_SECRET!) as jwt.JwtPayload;
     const userId = new Types.ObjectId(_id);

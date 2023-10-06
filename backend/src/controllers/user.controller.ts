@@ -5,6 +5,7 @@ import { isStrongPassword } from "../utils/validations/custom_validators.js";
 import jwt from "jsonwebtoken";
 import { getUserFromToken } from "../middleware/auth.js";
 import { constants } from "../utils/constants.js";
+import { Request, Response } from "express";
 
 
 /**
@@ -19,7 +20,7 @@ export class userControllers {
      * @param {*} res
      * @returns  user details if user is registered successfully. If not error message.
      */
-    static async register(req, res) {
+    static async register(req:Request, res:Response) {
         const { userName, email, password, interests, country } = req.body;
 
         try {
@@ -50,7 +51,7 @@ export class userControllers {
 
             await newUser.save();
             // sign a token and send it to the user
-            const token = jwt.sign({ _id: newUser._id }, process.env.JWT_SECRET);
+            const token = jwt.sign({ _id: newUser._id }, process.env.JWT_SECRET!);
 
             res.status(200).json({
                 token, user: {
@@ -73,7 +74,7 @@ export class userControllers {
      * @param {*} res 
      * @returns  user details if user exists and has valid credentials. If not error message.
      */
-    static async login(req, res) {
+    static async login(req:Request, res:Response) {
         // get the email and password from the request body
         const { email, password } = req.body;
 
@@ -95,7 +96,7 @@ export class userControllers {
                 return res.status(400).json({ message: "Invalid credentials" });
 
             // sign a token and send it to the user
-            const token = jwt.sign({ _id: existingUser._id }, process.env.JWT_SECRET);
+            const token = jwt.sign({ _id: existingUser._id }, process.env.JWT_SECRET!);
 
             res.status(200).json({
                 token, user: {
@@ -118,9 +119,13 @@ export class userControllers {
      * @param {*} res 
      * @returns user details if user exists. If not error message.
      */
-    static async getUser(req, res) {
+    static async getUser(req:Request, res:Response) {
         try {
-            const token = req.headers.authorization.split(" ")[1];
+
+            const token = req.headers.authorization?.split(" ")[1];
+            if (!token)
+                return res.status(401).json({ message: "Unauthorized" });
+
             const existingUser = await getUserFromToken(req, res);
             if (!existingUser)
                 return res.status(401).json({ message: "Unauthorized" });
@@ -146,10 +151,14 @@ export class userControllers {
      * @returns user details if updated user is updated successfully. If not error message.
      * 
      */
-    static async updateUser(req, res) {
-        // updates the user's username
+    static async updateUser(req:Request, res:Response) {
+        //TODO: WE SHOULD USE A MIDDLE WARE THAT FETCHES THE USER INSTEAD OF DOING IT IN MULTIPLE PLACES
+        const token = req.headers.authorization?.split(" ")[1];
+        if (!token)
+            return res.status(401).json({ message: "Unauthorized" });
+
+       // updates the user's username
         const { userName, interests, country } = req.body;
-        const token = req.headers.authorization.split(" ")[1];
 
         try {
             const existingUser = await getUserFromToken(req, res);
@@ -188,7 +197,7 @@ export class userControllers {
      * @param {*} res 
      * @returns success response if user deletion is successfull. If not an error response.
      */
-    static async deleteUser(req, res) {
+    static async deleteUser(req:Request, res:Response) {
         try {
             const existingUser = await getUserFromToken(req, res);
             if (!existingUser)
@@ -201,7 +210,7 @@ export class userControllers {
         }
     }
 
-    static async getCategories(req, res) {
+    static async getCategories(req:Request, res:Response) {
         try {
             res.status(200).json({ categories: constants.eventCategories });
         } catch (error) {
