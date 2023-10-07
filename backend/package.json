@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "InfoBlend",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "start": "nodemon app.js",
     "dummy": "nodemon dummyapp.js"

@@ -18,7 +18,7 @@ const mongoose_1 = require("mongoose");
 const user_model_js_1 = __importDefault(require("../models/user.model.js"));
 const auth = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const existingUser = yield getUserFromToken(req, res);
+        const existingUser = yield getUserFromToken(req);
         if (!existingUser)
             return res.status(401).json({ message: "Unauthorized" });
         res.locals.user = existingUser;
@@ -28,7 +28,7 @@ const auth = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () 
         return res.status(401).json({ message: "Unauthorized" });
     }
 });
-function getUserFromToken(req, res) {
+function getUserFromToken(req) {
     return __awaiter(this, void 0, void 0, function* () {
         const token = req.headers.authorization.split(" ")[1];
         const { _id } = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
