@@ -116,9 +116,12 @@ class userControllers {
      * @returns user details if user exists. If not error message.
      */
     static getUser(req, res) {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const token = req.headers.authorization.split(" ")[1];
+                const token = (_a = req.headers.authorization) === null || _a === void 0 ? void 0 : _a.split(" ")[1];
+                if (!token)
+                    return res.status(401).json({ message: "Unauthorized" });
                 const existingUser = yield (0, auth_js_1.getUserFromToken)(req, res);
                 if (!existingUser)
                     return res.status(401).json({ message: "Unauthorized" });
@@ -145,10 +148,14 @@ class userControllers {
      *
      */
     static updateUser(req, res) {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
+            //TODO: WE SHOULD USE A MIDDLE WARE THAT FETCHES THE USER INSTEAD OF DOING IT IN MULTIPLE PLACES
+            const token = (_a = req.headers.authorization) === null || _a === void 0 ? void 0 : _a.split(" ")[1];
+            if (!token)
+                return res.status(401).json({ message: "Unauthorized" });
             // updates the user's username
             const { userName, interests, country } = req.body;
-            const token = req.headers.authorization.split(" ")[1];
             try {
                 const existingUser = yield (0, auth_js_1.getUserFromToken)(req, res);
                 if (!existingUser)

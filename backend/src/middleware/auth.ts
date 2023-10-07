@@ -18,7 +18,7 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
     }
 }
 
-export async function getUserFromToken(req: Request, res: Response) : Promise<UserDocument|null>{
+export async function getUserFromToken(req: Request) : Promise<UserDocument|null>{
     const token: string = req.headers.authorization!.split(" ")[1];
 
     const { _id }: jwt.JwtPayload = jwt.verify(token, process.env.JWT_SECRET!) as jwt.JwtPayload;

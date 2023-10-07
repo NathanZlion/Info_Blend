@@ -2,24 +2,26 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.eventDetail = void 0;
 exports.eventDetail = {
-    message: "Successfully got event detail",
+    message: 'Successfully got event detail',
     event: {
         uri: 'eng-8843762',
         title: 'Ethiopia shaken by a new and growing rebellion in Amhara',
         summary: "Two weeks after irregular militia fighters called the Fano seized several towns and cities in Amhara, Ethiopia's second-biggest region, the barricades have been cleared from the streets and an uneasy calm has been restored by the federal military. The fighting was the fiercest to grip Ethiopia since a November ceasefire ended the two-year conflict in the next-door region of Tigray.  'Prime Minister Abiy Ahmed had set his sights on welcoming back foreign investors and kickstarting the economy. Inst",
         date: '2023-08-20',
-        imageUrls: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        imageUrls: [
+            'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        ],
     },
     articles: [
         {
             uri: '7681400647',
             url: 'https://punchng.com/au-voices-great-concern-over-deadly-libya-fighting/',
             title: "AU voices 'great concern' over deadly Libya fighting",
-            body: "The African Union on Thursday voiced \"great concern\" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts. Fifty-five people have been killed and 146 wounded in the worst clashes in the capital Tripoli in a year which erupted on Monday night, Libyan media reported. AU Commission head Moussa Faki Mahamat \"is following with great concern the developments of the security situation in Tripoli, which have resulted in the loss of many lives and many more wounded\", the pan-African body said in a statement. Faki \"urges all stakeholders and all military, political and social actors to put an immediate end to all hostilities... (and) reminds all stakeholders of the imperative need to pursue ongoing efforts towards national reconciliation,\" it said. He also warned that there was \"no military solution to the Libyan crisis and that Libya's unity, peace, stability, and historic international status can only be regained by peaceful means\". This week's bout of fighting pitted two of the myriad of militias that have vied for power since the NATO-backed revolt that toppled longtime dictator Moamer Kadhafi in 2011.",
+            body: 'The African Union on Thursday voiced "great concern" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts. Fifty-five people have been killed and 146 wounded in the worst clashes in the capital Tripoli in a year which erupted on Monday night, Libyan media reported. AU Commission head Moussa Faki Mahamat "is following with great concern the developments of the security situation in Tripoli, which have resulted in the loss of many lives and many more wounded", the pan-African body said in a statement. Faki "urges all stakeholders and all military, political and social actors to put an immediate end to all hostilities... (and) reminds all stakeholders of the imperative need to pursue ongoing efforts towards national reconciliation," it said. He also warned that there was "no military solution to the Libyan crisis and that Libya\'s unity, peace, stability, and historic international status can only be regained by peaceful means". This week\'s bout of fighting pitted two of the myriad of militias that have vied for power since the NATO-backed revolt that toppled longtime dictator Moamer Kadhafi in 2011.',
             date: '2023-08-17',
             time: '09:54:24',
             sourceName: 'Punch Newspapers',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7681348346',
@@ -33,13 +35,14 @@ exports.eventDetail = {
             date: '2023-08-17',
             time: '09:13:07',
             sourceName: 'Zawya.com',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7681730620',
             url: 'https://english.news.cn/20230817/1cafb8dc89c942c5a19af77b039a4329/c.html',
             title: 'AU calls for immediate end to all hostilities in embattled Libya',
-            body: 'ADDIS ABABA, Aug. 17 (Xinhua) -- Chairperson of the African Union (AU) Commission Moussa Faki on Thursday called for an immediate end to all hostilities in Libya.\n' + 'Faki in a press statement urged all stakeholders including military, political, and social actors in the North African country to put an immediate end to all hostilities.\n' +
+            body: 'ADDIS ABABA, Aug. 17 (Xinhua) -- Chairperson of the African Union (AU) Commission Moussa Faki on Thursday called for an immediate end to all hostilities in Libya.\n' +
+                'Faki in a press statement urged all stakeholders including military, political, and social actors in the North African country to put an immediate end to all hostilities.\n' +
                 'The statement expressed great concern with the recent security situation in the Libyan capital of Tripoli which resulted in many lives lost and many others wounded.\n' +
                 `"The chairperson reminds all stakeholders of the imperative need to pursue ongoing efforts towards national reconciliation," read the statement. "The AU commission chairperson solemnly recalls that there is no military solution to the Libyan crisis and that Libya's unity, peace, stability, and historic international status can only be regained by peaceful means."\n` +
                 "Violent clashes broke out in parts of Tripoli late Monday evening between the 444 Brigade and the Special Deterrence Force following the latter's reported arrest of a powerful 444 Brigade commander.\n" +
@@ -48,7 +51,7 @@ exports.eventDetail = {
             date: '2023-08-17',
             time: '14:17:56',
             sourceName: 'english.news.cn',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7681711650',
@@ -67,7 +70,7 @@ exports.eventDetail = {
             date: '2023-08-17',
             time: '14:03:23',
             sourceName: 'The South African',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7681329471',
@@ -79,7 +82,7 @@ exports.eventDetail = {
             date: '2023-08-17',
             time: '09:01:19',
             sourceName: 'Social News XYZ',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7683332489',
@@ -91,7 +94,7 @@ exports.eventDetail = {
             date: '2023-08-18',
             time: '17:43:30',
             sourceName: 'South Africa Today',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7681717616',
@@ -103,17 +106,17 @@ exports.eventDetail = {
             date: '2023-08-17',
             time: '14:06:06',
             sourceName: 'nampa.org',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7681936487',
             url: 'https://thestreetjournal.org/au-voices-great-concern-over-deadly-libya-fighting/',
             title: "AU Voices 'great Concern' Over Deadly Libya Fighting - The Street Journal",
-            body: "By AFP 17 August 2023 | 4:09 pm The African Union on Thursday voiced \"great concern\" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts. Forces affiliated with the Tripoli-based Government of National Unity (GNU) deploy following two days of deadly clashes between two rival groups in Libya's capital, on August 16, 2023. - Gun battles between two leading armed groups in Tripoli have killed 27 people and wounded 106, a toll update from the Emergency Medicine Centre said on August 16. (Photo by Mahmud TURKIA / AFP) The African Union on Thursday voiced \"great concern\" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts. Fifty-five people have been killed and 146 wounded in the worst clashes in the capital Tripoli in a year which erupted on Monday night, Libyan media reported. AU Commission head Moussa Faki Mahamat \"is following with great concern the developments of the security situation in Tripoli, which have resulted in the loss of many lives and many more wounded\", the pan-African body said in a statement. Faki \"urges all stakeholders and all military, political and social actors to put an immediate end to all hostilities... (and) reminds all stakeholders of the imperative need to pursue ongoing efforts towards national reconciliation,\" it said. He also warned that there was \"no military solution to the Libyan crisis and that Libya's unity, peace, stability and historic international status can only be regained by peaceful means\". This week's bout of fighting pitted two of the myriad of militias that have vied for power since the NATO-backed revolt that toppled longtime dictator Moamer Kadhafi in 2011. Latest NOW AI, which stands for Artificial Intelligence, is the ability of a digital computer or robot (computerized) to perform tasks commonly associated with intelligent beings. It is the science and engineering of making intelligent machines, that is a computer program carry out intelligent tasks that has to do with interacting with human beings. 26 mins ago The management of the University of Calabar (UNICAL) has suspended Cyril Ndifon, the embattled dean of the faculty of law accused of sexual harassment. The suspension was announced on Thursday in a letter signed by Gabriel Egbe, the varsity's registrar. Part of the letter stated: \"Please refer to our letter Ref UC/REG/DISC.45A dated August 14,... 32 mins ago Nigerian singer and songwriter, Azeez Adeshina Fashola, known as Naira Marley has joined the campaign against drug abuse in the country. The spokesperson for the National Drug Law Enforcement Agency (NDLEA), Femi Babafemi, disclosed this in a statement on Thursday. Babafemi said that Naira Marley was well received by the NDLEA Chairman/Chief Executive Officer (CEO),... 50 mins ago Kano State Government said it worried over the allegation of corrupt practice raised by Justice Flora Azinge of the election petition tribunal against undisclosed legal practitioners in the state. Justice Azinge presently leading a penal of state and federal house of assembly petition in Kano, had alleged that some senior lawyers in the state had... 56 mins ago The African Union on Thursday voiced \"great concern\" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts.\", 'Court strikes out firearm charge against suspended CBN governor, Godwin Emefiele",
+            body: 'By AFP 17 August 2023 | 4:09 pm The African Union on Thursday voiced "great concern" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts. Forces affiliated with the Tripoli-based Government of National Unity (GNU) deploy following two days of deadly clashes between two rival groups in Libya\'s capital, on August 16, 2023. - Gun battles between two leading armed groups in Tripoli have killed 27 people and wounded 106, a toll update from the Emergency Medicine Centre said on August 16. (Photo by Mahmud TURKIA / AFP) The African Union on Thursday voiced "great concern" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts. Fifty-five people have been killed and 146 wounded in the worst clashes in the capital Tripoli in a year which erupted on Monday night, Libyan media reported. AU Commission head Moussa Faki Mahamat "is following with great concern the developments of the security situation in Tripoli, which have resulted in the loss of many lives and many more wounded", the pan-African body said in a statement. Faki "urges all stakeholders and all military, political and social actors to put an immediate end to all hostilities... (and) reminds all stakeholders of the imperative need to pursue ongoing efforts towards national reconciliation," it said. He also warned that there was "no military solution to the Libyan crisis and that Libya\'s unity, peace, stability and historic international status can only be regained by peaceful means". This week\'s bout of fighting pitted two of the myriad of militias that have vied for power since the NATO-backed revolt that toppled longtime dictator Moamer Kadhafi in 2011. Latest NOW AI, which stands for Artificial Intelligence, is the ability of a digital computer or robot (computerized) to perform tasks commonly associated with intelligent beings. It is the science and engineering of making intelligent machines, that is a computer program carry out intelligent tasks that has to do with interacting with human beings. 26 mins ago The management of the University of Calabar (UNICAL) has suspended Cyril Ndifon, the embattled dean of the faculty of law accused of sexual harassment. The suspension was announced on Thursday in a letter signed by Gabriel Egbe, the varsity\'s registrar. Part of the letter stated: "Please refer to our letter Ref UC/REG/DISC.45A dated August 14,... 32 mins ago Nigerian singer and songwriter, Azeez Adeshina Fashola, known as Naira Marley has joined the campaign against drug abuse in the country. The spokesperson for the National Drug Law Enforcement Agency (NDLEA), Femi Babafemi, disclosed this in a statement on Thursday. Babafemi said that Naira Marley was well received by the NDLEA Chairman/Chief Executive Officer (CEO),... 50 mins ago Kano State Government said it worried over the allegation of corrupt practice raised by Justice Flora Azinge of the election petition tribunal against undisclosed legal practitioners in the state. Justice Azinge presently leading a penal of state and federal house of assembly petition in Kano, had alleged that some senior lawyers in the state had... 56 mins ago The African Union on Thursday voiced "great concern" about the flare-up of deadly fighting in Libya this week, calling for an immediate end to hostilities and for the pursuit of reconciliation efforts.", \'Court strikes out firearm charge against suspended CBN governor, Godwin Emefiele',
             date: '2023-08-17',
             time: '17:16:07',
             sourceName: 'Breaking News',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7681789206',
@@ -123,7 +126,7 @@ exports.eventDetail = {
             date: '2023-08-17',
             time: '15:06:40',
             sourceName: 'Standard Digital News - Kenya',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
         {
             uri: '7682054770',
@@ -133,7 +136,7 @@ exports.eventDetail = {
             date: '2023-08-17',
             time: '19:22:19',
             sourceName: 'Agencia Informativa Latinamericana Prensa Latina',
-            sourceLogoUrl: "https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg",
+            sourceLogoUrl: 'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
         },
     ],
 };

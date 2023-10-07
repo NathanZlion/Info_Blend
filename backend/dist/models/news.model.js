@@ -4,29 +4,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const articleschema = new mongoose_1.default.schema({
+const articleSchema = new mongoose_1.default.Schema({
     content: {
-        type: string,
+        type: String,
         required: [true, "content is required"],
     },
     conflicting: {
-        type: boolean,
+        type: Boolean,
         default: false,
     },
 }, { _id: false });
-const newsschema = new mongoose_1.default.schema({
-    sourcename: {
-        type: string,
+const newsSchema = new mongoose_1.default.Schema({
+    sourceName: {
+        type: String,
         required: [true, "news source is required"],
     },
     url: {
-        type: string,
+        type: String,
         required: [true, "a url to the news article is required for further reading"],
     },
-    article: {
-        type: [articleschema],
+    articles: {
+        type: [articleSchema],
         default: [],
     },
 }, { timestamps: true });
-const news = mongoose_1.default.model("news", newsschema);
+const news = mongoose_1.default.model("news", newsSchema);
 exports.default = news;

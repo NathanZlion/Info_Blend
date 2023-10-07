@@ -126,7 +126,7 @@ export class userControllers {
             if (!token)
                 return res.status(401).json({ message: "Unauthorized" });
 
-            const existingUser = await getUserFromToken(req, res);
+            const existingUser = await getUserFromToken(req);
             if (!existingUser)
                 return res.status(401).json({ message: "Unauthorized" });
 
@@ -161,7 +161,7 @@ export class userControllers {
         const { userName, interests, country } = req.body;
 
         try {
-            const existingUser = await getUserFromToken(req, res);
+            const existingUser = await getUserFromToken(req);
             if (!existingUser)
                 return res.status(401).json({ message: "Unauthorized" });
 
@@ -199,7 +199,7 @@ export class userControllers {
      */
     static async deleteUser(req:Request, res:Response) {
         try {
-            const existingUser = await getUserFromToken(req, res);
+            const existingUser = await getUserFromToken(req);
             if (!existingUser)
                 return res.status(400).json({ message: "Unauthorized" });
 

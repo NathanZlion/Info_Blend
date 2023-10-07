@@ -31,8 +31,6 @@ const auth = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () 
 function getUserFromToken(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const token = req.headers.authorization.split(" ")[1];
-        if (!token)
-            return res.status(400).json({ message: "Unauthorized, no token found." });
         const { _id } = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
         const userId = new mongoose_1.Types.ObjectId(_id);
         const existingUser = yield user_model_js_1.default.findById(userId);
