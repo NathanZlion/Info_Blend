@@ -6,7 +6,7 @@ import Users, { UserDocument } from '../models/user.model.js';
 
 const auth = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const existingUser = await getUserFromToken(req, res);
+        const existingUser = await getUserFromToken(req);
 
         if (!existingUser)
             return res.status(401).json({ message: "Unauthorized" });
