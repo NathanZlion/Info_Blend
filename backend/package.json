@@ -4,8 +4,9 @@
   "description": "InfoBlend",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "dummy": "nodemon dummyapp.js"
+    "start": "node ./dist/app.js",
+    "dev":"nodemon ./src/app.ts",
+    "dummy": "nodemon ./src/dummyapp.ts"
   },
   "author": "Nathnael Dereje",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "@types/jsonwebtoken": "^9.0.3",
     "@types/validator": "^13.11.2",
     "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {

@@ -1,5 +1,5 @@
 import mongoose, {Document} from "mongoose";
-import { constants } from "../utils/constants.js";
+import { constants } from "../utils/constants";
 
 export interface UserDocument extends Document{
     userName: string | undefined,

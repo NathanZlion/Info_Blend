@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 import { Response, Request, NextFunction } from "express";
 import { Types } from 'mongoose';
-import Users, { UserDocument } from '../models/user.model.js';
+import Users, { UserDocument } from '../models/user.model';
 
 const auth = async (req: Request, res: Response, next: NextFunction) => {
     try {

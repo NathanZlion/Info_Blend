@@ -1,10 +1,10 @@
-import User from "../models/user.model.js";
+import User from "../models/user.model";
 import bcrypt from "bcryptjs";
 import Validator from "validator";
-import { isStrongPassword } from "../utils/validations/custom_validators.js";
+import { isStrongPassword } from "../utils/validations/custom_validators";
 import jwt from "jsonwebtoken";
-import { getUserFromToken } from "../middleware/auth.js";
-import { constants } from "../utils/constants.js";
+import { getUserFromToken } from "../middleware/auth";
+import { constants } from "../utils/constants";
 import { Request, Response } from "express";
 
 

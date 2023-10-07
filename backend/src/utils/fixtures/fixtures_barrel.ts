@@ -1,6 +1,6 @@
 
-import { curatedEventsList } from "./CuratedEventsList.js";
-import { articlesComparision } from "./articlesComparision.js";
-import { eventDetail } from "./eventDetail.js";
+import { curatedEventsList } from "./CuratedEventsList";
+import { articlesComparision } from "./articlesComparision";
+import { eventDetail } from "./eventDetail";
 
 export { curatedEventsList, articlesComparision, eventDetail };
