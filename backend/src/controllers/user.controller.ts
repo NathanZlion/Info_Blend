@@ -1,7 +1,7 @@
 import User from "../models/user.model";
 import bcrypt from "bcryptjs";
 import Validator from "validator";
-import { isStrongPassword } from "../utils/validations/custom_validators";
+import { PasswordNotStrongEnoughError, checkPasswordStrength } from "../utils/validations/custom_validators";
 import jwt from "jsonwebtoken";
 import { getUserFromToken } from "../middleware/auth";
 import { constants } from "../utils/constants";
@@ -35,8 +35,8 @@ export class userControllers {
             if (existingUser)
                 return res.status(400).json({ message: "User by that email already exists" });
 
-            if (!isStrongPassword(password))
-                return res.status(400).json({ message: "Password is not strong enough" });
+            // check if password is strong enough
+            checkPasswordStrength(password);
 
             // Saves the hashed password in the database
             const salt = await bcrypt.genSalt(10);
@@ -63,10 +63,14 @@ export class userControllers {
             });
         } catch (error) {
             console.log(error);
-            res.status(500).json({ message: "Something went wrong while registering." });
+
+            if (error instanceof PasswordNotStrongEnoughError) {
+                res.status(400).json({ message: error.message });
+            } else {
+                res.status(500).json({ message: "Something went wrong while registering." });
+            }
         }
     }
-
 
     /**
      * login controller to handle user login
@@ -74,11 +78,10 @@ export class userControllers {
      * @param {*} res 
      * @returns  user details if user exists and has valid credentials. If not error message.
      */
-    static async login(req:Request, res:Response) {
-        // get the email and password from the request body
-        const { email, password } = req.body;
-
+    static async login(req: Request, res: Response) {
         try {
+            const { email, password } = req.body;
+
             if (!email || !password)
                 return res.status(400).json({ message: "Please fill in all fields" });
 

@@ -9,31 +9,40 @@
  * 
  * A function to check if a password is strong enough
  */
-export function isStrongPassword(password: string): boolean {
+export function checkPasswordStrength(password: string): void {
     // criteria: Password must be at least 8 characters long
     if (password.length < 8) {
-        return false;
+        throw new PasswordNotStrongEnoughError("Password must be at least 8 characters long");
     }
 
     // criteria: Password must contain at least one uppercase letter
     if (!/[A-Z]/.test(password)) {
-        return false;
+        throw new PasswordNotStrongEnoughError("Password must contain at least one uppercase letter");
     }
 
     // criteria: Password must contain at least one lowercase letter
     if (!/[a-z]/.test(password)) {
-        return false;
+        throw new PasswordNotStrongEnoughError("Password must contain at least one lowercase letter");
     }
 
     // criteria: Password must contain at least one digit
     if (!/\d/.test(password)) {
-        return false;
+        throw new PasswordNotStrongEnoughError("Password must contain at least one digit");
     }
 
     // criteria: Password must contain at least one special character
     if (!/[!@#$%^&*]/.test(password)) {
-        return false;
+        throw new PasswordNotStrongEnoughError("Password must contain at least one special character");
     }
+}
 
-    return true;
+
+
+
+// custrom error for password not strong enough
+export class PasswordNotStrongEnoughError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = "Password Does Not Meet Criteria";
+    }
 }
