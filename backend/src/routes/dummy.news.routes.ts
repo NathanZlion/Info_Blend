@@ -1,4 +1,4 @@
-import { DummyNewsController } from '../controllers/dummy.news.controller.js';
+import { DummyNewsController } from '../controllers/dummy.news.controller';
 import express, { Router } from "express";
 
 const dummyNewsRouter: Router = express.Router();

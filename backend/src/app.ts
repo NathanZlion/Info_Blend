@@ -3,8 +3,10 @@ import mongoose from "mongoose";
 import express from "express";
 import cors from "cors"
 import { config as configDotenv } from "dotenv";
-import userRouter from "./routes/user.routes.js";
-import newsRouter from "./routes/news.routes.js";
+
+
+import userRouter from "./routes/user.routes";
+import newsRouter from "./routes/news.routes";
 
 configDotenv();
 

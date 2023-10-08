@@ -2,8 +2,8 @@ import { Request, Response, NextFunction, Express } from "express";
 import express from "express";
 import { config as configDotenv } from "dotenv";
 import cors from "cors"
-import userRouter from "./routes/user.routes.js";
-import dummyNewsRouter from "./routes/dummy.news.routes.js";
+import userRouter from "./routes/user.routes";
+import dummyNewsRouter from "./routes/dummy.news.routes";
 
 
 configDotenv();

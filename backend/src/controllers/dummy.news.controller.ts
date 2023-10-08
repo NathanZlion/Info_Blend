@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { curatedEventsList, articlesComparision, eventDetail } from "../utils/fixtures/fixtures_barrel.js";
+import { curatedEventsList, articlesComparision, eventDetail } from "../utils/fixtures/fixtures_barrel";
 
 export class DummyNewsController {
     static async getCuratedEvents(req:Request, res:Response) {
