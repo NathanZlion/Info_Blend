@@ -8,7 +8,7 @@
     "dev":"nodemon ./src/app.ts",
     "dummy": "nodemon ./src/dummyapp.ts"
   },
-  "author": "Nathnael Dereje",
+  "author": "Nathnael Dereje && Yonatan Haile",
   "license": "ISC",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.4",
