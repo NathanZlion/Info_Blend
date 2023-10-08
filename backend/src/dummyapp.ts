@@ -2,7 +2,7 @@ import { Request, Response, NextFunction, Express } from "express";
 import express from "express";
 import { config as configDotenv } from "dotenv";
 import cors from "cors"
-import userRouter from "./routes/user.routes";
+import dummyUserRouter from "./routes/dummy.user.routes";
 import dummyNewsRouter from "./routes/dummy.news.routes";
 
 
@@ -22,7 +22,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 })
 
 // ROUTES
-app.use("/api/v1/user", userRouter);
+app.use("/api/v1/user", dummyUserRouter);
 app.use("/api/v1/news", dummyNewsRouter);
 
 // any origin can access this server
