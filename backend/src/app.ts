@@ -3,10 +3,6 @@ import mongoose from "mongoose";
 import express from "express";
 import cors from "cors"
 import { config as configDotenv } from "dotenv";
-
-//to be deleted
-import './utils/remote-functions.js'
-
 import userRouter from "./routes/user.routes.js";
 import newsRouter from "./routes/news.routes.js";
 

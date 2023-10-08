@@ -37,7 +37,7 @@ function searchForEvents(searchString) {
     });
 }
 exports.searchForEvents = searchForEvents;
-function getEventFeed({ categories, country }) {
+function getEventFeed({ categories, country, }) {
     return __awaiter(this, void 0, void 0, function* () {
         const eventRegistry = new eventregistry_1.EventRegistry({
             apiKey: process.env.EVENT_REGISTRY_API_KEY,
@@ -103,15 +103,13 @@ function getArticles(eventUri) {
             queryEventArticlesIter.execQuery((article) => rawArticles.push(article), () => res(rawArticles));
         });
         const sourcesSet = new Set();
-        rawArticles = rawArticles.filter((article) => {
-            const title = article.source.title;
-            if (sourcesSet.has(title)) {
+        rawArticles = rawArticles.filter(({ source, title, body, url }) => {
+            if (sourcesSet.has(source.title))
                 return false;
-            }
-            else {
-                sourcesSet.add(title);
-                return true;
-            }
+            else if (!title || !body || !url)
+                return false;
+            sourcesSet.add((source.title));
+            return true;
         });
         const articles = rawArticles.map((article) => ({
             uri: article.uri,

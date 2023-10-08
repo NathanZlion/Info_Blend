@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "InfoBlend",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "start": "nodemon app.js",
     "dummy": "nodemon dummyapp.js"
@@ -11,9 +10,11 @@
   "author": "Nathnael Dereje",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.4",
     "@types/cors": "^2.8.14",
     "@types/express": "^4.17.18",
     "@types/jsonwebtoken": "^9.0.3",
+    "@types/validator": "^13.11.2",
     "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
   },

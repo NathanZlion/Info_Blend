@@ -1,37 +1,52 @@
-import mongoose from "mongoose";
+import mongoose, {Document} from "mongoose";
+//CAMEL CASED AND MADE MINOR SPELLING CORRECTIONS
+//DID'NT EXTEND MONGOOSE DOCUMENT BECAUSE NO USE FOR _id
 
-const articleschema = new mongoose.schema(
+export interface ArticleDocument {
+    content:string,
+    conficting:boolean
+}
+
+const articleSchema = new mongoose.Schema(
     {
         content: {
-            type: string,
+            type: String,
             required: [true, "content is required"],
         },
         conflicting: {
-            type: boolean,
+            type: Boolean,
             default: false,
         },
     },
     { _id: false }
 );
 
-const newsschema = new mongoose.schema(
+
+export interface NewsDocument  extends Document{
+    sourceName:string,
+    url:string,
+    articles:ArticleDocument[]
+}
+
+const newsSchema = new mongoose.Schema(
     {
-        sourcename: {
-            type: string,
+        sourceName: {
+            type: String,
             required: [true, "news source is required"],
         },
         url: {
-            type: string,
+            type: String,
             required: [true, "a url to the news article is required for further reading"],
         },
-        article: {
-            type: [articleschema],
+
+        articles: {
+            type: [articleSchema],
             default: [],
         },
     },
     { timestamps: true }
 );
 
-const news = mongoose.model("news", newsschema);
+const news = mongoose.model<NewsDocument>("news", newsSchema);
 
 export default news;

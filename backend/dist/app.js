@@ -16,8 +16,6 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = require("dotenv");
-//to be deleted
-require("./utils/remote-functions.js");
 const user_routes_js_1 = __importDefault(require("./routes/user.routes.js"));
 const news_routes_js_1 = __importDefault(require("./routes/news.routes.js"));
 (0, dotenv_1.config)();
