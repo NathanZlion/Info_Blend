@@ -19,7 +19,7 @@ export class userControllers {
      * @param {*} req
      * @param {*} res
      * @returns  user details if user is registered successfully. If not error message.
-     */
+    */
     static async register(req:Request, res:Response) {
         const { userName, email, password, interests, country } = req.body;
 
@@ -98,7 +98,6 @@ export class userControllers {
             if (!isPasswordCorrect)
                 return res.status(400).json({ message: "Invalid credentials" });
 
-            // sign a token and send it to the user
             const token = jwt.sign({ _id: existingUser._id }, process.env.JWT_SECRET!);
 
             res.status(200).json({
@@ -113,7 +112,6 @@ export class userControllers {
             console.log(error);
             res.status(500).json({ message: "Something went wrong while logging in." });
         }
-
     }
 
     /**
@@ -122,10 +120,10 @@ export class userControllers {
      * @param {*} res 
      * @returns user details if user exists. If not error message.
      */
-    static async getUser(req:Request, res:Response) {
+    static async getUser(req: Request, res: Response) {
         try {
-
             const token = req.headers.authorization?.split(" ")[1];
+
             if (!token)
                 return res.status(401).json({ message: "Unauthorized" });
 
@@ -154,16 +152,13 @@ export class userControllers {
      * @returns user details if updated user is updated successfully. If not error message.
      * 
      */
-    static async updateUser(req:Request, res:Response) {
-        //TODO: WE SHOULD USE A MIDDLE WARE THAT FETCHES THE USER INSTEAD OF DOING IT IN MULTIPLE PLACES
-        const token = req.headers.authorization?.split(" ")[1];
-        if (!token)
-            return res.status(401).json({ message: "Unauthorized" });
-
-       // updates the user's username
-        const { userName, interests, country } = req.body;
-
+    static async updateUser(req: Request, res: Response) {
         try {
+            const token = req.headers.authorization?.split(" ")[1];
+            if (!token)
+                return res.status(401).json({ message: "Unauthorized" });
+
+            const { userName, interests, country } = req.body;
             const existingUser = await getUserFromToken(req);
             if (!existingUser)
                 return res.status(401).json({ message: "Unauthorized" });
@@ -200,7 +195,7 @@ export class userControllers {
      * @param {*} res 
      * @returns success response if user deletion is successfull. If not an error response.
      */
-    static async deleteUser(req:Request, res:Response) {
+    static async deleteUser(req: Request, res: Response) {
         try {
             const existingUser = await getUserFromToken(req);
             if (!existingUser)
@@ -213,7 +208,7 @@ export class userControllers {
         }
     }
 
-    static async getCategories(req:Request, res:Response) {
+    static async getCategories(req: Request, res: Response) {
         try {
             res.status(200).json({ categories: constants.eventCategories });
         } catch (error) {
