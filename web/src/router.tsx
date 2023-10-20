@@ -4,31 +4,30 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
-import Home from './pages/Home'
+import UnprotectedShell from './pages/unprotected/Shell/Shell'
+import LandingPage from './pages/unprotected/LandingPage/LandingPage'
+import Login from './pages/unprotected/Login/Login'
+import Signup from './pages/unprotected/Signup/Signup'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <UnprotectedShell />,
     children: [
       {
-        path: 'login',
-        element: <p>login page</p>,
+        path: '',
+        element: <LandingPage />,
       },
-      {
-        path: 'signup',
-        element: <p>sign up page</p>,
-      },
-      {
-        path:'',
-        element: <p>default</p>
-      }
     ],
   },
   {
-    path:'/login/abebe',
-    element: <p>i am me, strong independent woman</p>
-  }
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/signup',
+    element: <Signup />,
+  },
 ])
 
 export default router
