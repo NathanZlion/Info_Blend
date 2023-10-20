@@ -1,34 +1,45 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from 'react-router-dom'
-import Home from './pages/Home'
+import { createBrowserRouter } from "react-router-dom";
+import EventPage from "./pages/Event/EventPage";
+import LandingPage from "./pages/Landing/LandingPage";
+import Signup from "./pages/Signup/SignupPage";
+import Login from "./pages/Login/LoginPage";
+import Feeds from "./pages/Feeds/Feeds";
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Home />,
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
     children: [
       {
-        path: 'login',
-        element: <p>login page</p>,
+        path: "",
+        element: <LandingPage />,
       },
       {
-        path: 'signup',
-        element: <p>sign up page</p>,
+        path: "",
+        element: <LandingPage />,
       },
       {
-        path:'',
-        element: <p>default</p>
-      }
+        path: "",
+        element: <LandingPage />,
+      },
     ],
   },
   {
-    path:'/login/abebe',
-    element: <p>i am me, strong independent woman</p>
-  }
-])
+    path: "/feed",
+    element: <Feeds />,
+  },
+  {
+    path: "/event/:id",
+    element: <EventPage />,
+  },
+]);
 
-export default router
+export default router;
