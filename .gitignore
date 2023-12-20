@@ -1,1 +1,7 @@
 .vscode
+
+
+# package-lock any where in the filw
+package-lock.json
+*/package-lock.json
+backend/package-lock.json
