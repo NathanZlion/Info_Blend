@@ -1,54 +1,42 @@
 import { Link } from 'react-router-dom'
+import heroImg from './assets/hero.svg'
+import waveImg from './assets/wave.svg'
+import OutNavbar from '../../components/OutNavbar'
 
-function OutNavbar() {
-  return (
-    <div className='px-[2rem] py-[16px] bg-gradient-to-r from-[#E47500] to-[#DF7C14] text-white'>
-      <nav className='flex justify-between items-center max-w-[1300px] m-auto'>
-        <Link className='font-bold text-[25px]' to={'/'}>
-          INFOBLENDER
-        </Link>
-        <div className='flex gap-[80px] items-center'>
-          <Link to={'/signup'}>Sign Up</Link>
-          <Link
-            className='text-[#DC7000] bg-[white] px-[28px] py-[10px] rounded'
-            to={'/login'}
-          >
-            Login
-          </Link>
-        </div>
-      </nav>
-    </div>
-  )
-}
-
-function Hero(){
-  return <section>
-    <div>
-
-    </div>
-    <div>
-      
-    </div>
-  </section>
-}
-
-
-function LandingPage() {
+export default function LandingPage() {
   return (
     <main>
       <OutNavbar />
-      <Hero/>
-      {/* Navbar */}
-      {/* Hero Section */}
-      {/* Intro paragraph section */}
-      {/* features section */}
-      {/* How It Works */}
-      {/* Call to action */}
-      {/* about us */}
-      {/* contact */}
-      {/* footer */}
+      <section className='relative overflow-hidden py-[100px] px-[2rem]'>
+        <img
+          src={waveImg}
+          alt=''
+          className='absolute bottom-0 left-0 right-0'
+        />
+        <div className='flex flex-col md:flex-row relative min-h-[70vh] items-center max-w-[1190px] m-auto'>
+          <div className='flex-1 flex flex-col gap-[2rem]'>
+            <p className='text-[#E87D0E] text-2xl font-bold'>
+              We seek the Truth
+            </p>
+            <h2 className='text-7xl font-bold '>BLEND · CONTRAST · INFORM</h2>
+            <p className=''>
+              We let you compare and contrast news from different sources and
+              perspectives. We don't tell you what is true or what is not. You
+              decide.
+            </p>
+            <div>
+              <Link to={'/signup'}>
+                <button className='bg-[#eb7300] text-white px-[30px] py-[12px] rounded-[100px]'>
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className='flex-1'>
+            <img src={heroImg} alt='' />
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
-
-export default LandingPage
