@@ -4,7 +4,8 @@
 function LandingPage(){
 
   return (
-    <>
+    <main>
+      <p className="bg-black">Abebe beso bela</p>
       {/* Navbar */}
       {/* Hero Section */}
       {/* Intro paragraph section */}
@@ -14,7 +15,7 @@ function LandingPage(){
       {/* about us */}
       {/* contact */}
       {/* footer */}
-    </>
+    </main>
   );
 }
 

@@ -4,6 +4,7 @@ import LandingPage from "./pages/Landing/LandingPage";
 import Signup from "./pages/Signup/SignupPage";
 import Login from "./pages/Login/LoginPage";
 import Feeds from "./pages/Feeds/Feeds";
+import React from "react";
 
 const router = createBrowserRouter([
   {
