@@ -1,16 +1,11 @@
+
 // import { Link } from "react-router-dom";
 
-function LandingPage() {
+function LandingPage(){
+
   return (
     <main>
-      <nav className='flex'>
-        <p className='font-bold'>INFOBLENDER</p>
-        <div>
-          <a href=''>Home</a>
-          <a href=''>Sign Up</a>
-          <a href=''>Login</a>
-        </div>
-      </nav>
+      <p className="bg-black">Abebe beso bela</p>
       {/* Navbar */}
       {/* Hero Section */}
       {/* Intro paragraph section */}
@@ -21,7 +16,7 @@ function LandingPage() {
       {/* contact */}
       {/* footer */}
     </main>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;
