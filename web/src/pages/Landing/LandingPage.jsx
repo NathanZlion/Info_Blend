@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import heroImg from './assets/hero.svg'
 import waveImg from './assets/wave.svg'
 import OutNavbar from '../../components/OutNavbar'
+import PrimaryButton from '../../components/PrimaryButton'
 
 export default function LandingPage() {
   return (
@@ -26,9 +27,7 @@ export default function LandingPage() {
             </p>
             <div>
               <Link to={'/signup'}>
-                <button className='bg-[#eb7300] text-white px-[30px] py-[12px] rounded-[100px]'>
-                  Sign Up
-                </button>
+                <PrimaryButton title={'Sign Up'} />
               </Link>
             </div>
           </div>
