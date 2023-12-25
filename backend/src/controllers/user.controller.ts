@@ -35,7 +35,7 @@ export class userControllers {
                 res.status(400).json({ message: "User by that email already exists" });
                 return;
             }
-
+ 
             const existingUnverifiedUser = await UnverifiedEmail.findOne({ email });
 
             if (existingUnverifiedUser) {

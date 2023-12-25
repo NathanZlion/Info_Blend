@@ -1,11 +1,15 @@
+import InNavbar from '../../components/InNavbar'
 
-
-const EventPage = () => {
+const FeedPage = () => {
   return (
-    <>
+    <main>
+      <InNavbar />
+      <section>
+        <div> Feed </div>
+      </section>
       <div> Event </div>
-    </>
-  );
-};
+    </main>
+  )
+}
 
-export default EventPage;
+export default FeedPage
