@@ -13,6 +13,7 @@ export default function InNavbar() {
 
   return (
     <>
+      {/* place holder for the navbar */}
       <div className='w-5 h-[5rem]'></div>
 
       <div className={'fixed top-0 left-0 w-screen z-10 '}>
