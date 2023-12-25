@@ -31,3 +31,4 @@ build
 *.local
 
 .env
+package-lock.json
