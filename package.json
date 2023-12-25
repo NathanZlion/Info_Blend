@@ -9,5 +9,8 @@
     "run_app": "echo \"This should start both backend and flutter mobile but it's not implemented yet\" "
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "javascript-time-ago": "^2.5.9"
+  }
 }
