@@ -5,7 +5,7 @@ import timeAgo from '../../utils/time-ago'
 
 function SearchBar({ onFetch }) {
   return (
-    <form className='flex flex-col gap-3 items-center'>
+    <form className='flex flex-col gap-3 items-center lg:flex-row lg:justify-center'>
       <div className='relative'>
         <input
           type='text'
@@ -27,18 +27,36 @@ function SearchBar({ onFetch }) {
 
 function EventCard({ uri, title, summary, date, imageUrls }) {
   return (
-    <div className='flex flex-col gap-3'>
-      <div className='h-[225px] w-full '>
+    <div className='flex flex-col md:flex-row gap-3 '>
+      <div className=' lg:h-[295px] lg:flex lg:gap-4 md:flex-1 '>
         <img
           src={imageUrls[0]}
           alt={title + 'picture'}
-          className='rounded-4 w-full h-full object-cover'
+          className='min-h-[225px]  min-w-0 lg:flex-[2] rounded-4  object-cover'
         />
+
+        {imageUrls.length >= 3 && (
+          <div className='hidden flex-[1] lg:flex flex-col gap-4'>
+            <img
+              src={imageUrls[1]}
+              className='min-h-0  min-w-0 flex-1 rounded-4  object-cover'
+            />
+
+            <img
+              src={imageUrls[2]}
+              className='min-h-0  min-w-0 flex-1 rounded-4 object-cover'
+            />
+          </div>
+        )}
       </div>
-      <h3 className='font-semibold px-2'>{title}</h3>
-      <div className='flex justify-between items-center px-2'>
-        <p>{timeAgo.format(new Date(date))}</p>
-        <PrimaryButton title={'Read More'} />
+      <div className='flex flex-col gap-3 md:flex-1'>
+        <h3 className='font-semibold px-2 lg:text-2xl'>{title}</h3>
+        <p className='hidden md:block px-2'> {summary.slice(0, 100)} ...</p>
+        <div className='md:flex-1'></div>
+        <div className='flex justify-between px-2 lg:items-end'>
+          <p>{timeAgo.format(new Date(date))}</p>
+          <PrimaryButton title={'Read More'} />
+        </div>
       </div>
     </div>
   )
@@ -91,15 +109,22 @@ const FeedPage = () => {
       ],
     },
   ]
+
   return (
     <main>
       <InNavbar />
       <section className='py-10 px-[2rem]'>
-        <div className='flex flex-col gap-3'>
-          <h2 className='text-4xl font-semibold text-center'>
-            What is On Your Mind?
-          </h2>
-          <SearchBar />
+        <div className='flex flex-col gap-3 max-w-[1200px] m-auto'>
+
+          {/* search bar  */}
+          <div className='flex flex-col gap-3 md:py-[90px]'>
+            <h2 className='text-4xl font-semibold text-center'>
+              What is On Your Mind?
+            </h2>
+            <SearchBar />
+          </div>
+
+          {/* cards  */}
           <div className='py-12 flex flex-col gap-10'>
             {results.map((result, i) => (
               <>
