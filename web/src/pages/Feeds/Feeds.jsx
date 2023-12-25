@@ -1,11 +1,9 @@
-
-
-const EventPage = () => {
+const FeedPage = () => {
   return (
     <>
       <div> Event </div>
     </>
-  );
-};
+  )
+}
 
-export default EventPage;
+export default FeedPage
