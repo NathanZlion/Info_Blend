@@ -1,65 +1,7 @@
 import InNavbar from '../../components/InNavbar'
-import searchImg from './assets/search.svg'
-import PrimaryButton from '../../components/PrimaryButton'
-import timeAgo from '../../utils/time-ago'
 
-function SearchBar({ onFetch }) {
-  return (
-    <form className='flex flex-col gap-3 items-center lg:flex-row lg:justify-center'>
-      <div className='relative'>
-        <input
-          type='text'
-          className='pl-[4rem] py-3 min-w-[400px] rounded-[100px] bg-[#f1f1f1]'
-          placeholder='Search For Events'
-        />
-        <img
-          src={searchImg}
-          className='absolute top-[50%] left-[2rem] transform -translate-y-[50%]'
-          alt=''
-        />
-      </div>
-      <div>
-        <PrimaryButton title={'Search'} onClick={() => {}} />
-      </div>
-    </form>
-  )
-}
-
-function EventCard({ uri, title, summary, date, imageUrls }) {
-  return (
-    <div className='flex flex-col md:flex-row gap-6 '>
-      <div className=' lg:h-[295px] lg:flex lg:gap-3 md:flex-1 '>
-        <img
-          src={imageUrls[0]}
-          alt={title + 'picture'}
-          className='min-h-[225px]  min-w-0 lg:flex-[2] rounded-3  object-cover'
-        />
-
-        {imageUrls.length >= 3 && (
-          <div className='hidden flex-[1] lg:flex flex-col gap-3'>
-            <img
-              src={imageUrls[1]}
-              className='min-h-0  min-w-0 flex-1 rounded-3  object-cover'
-            />
-
-            <img
-              src={imageUrls[2]}
-              className='min-h-0  min-w-0 flex-1 rounded-3 object-cover'
-            />
-          </div>
-        )}
-      </div>
-      <div className='flex flex-col gap-3 md:flex-1'>
-        <h3 className='font-semibold px-2 lg:text-2xl'>{title}</h3>
-        <p className='hidden md:flex flex-1 px-2'> {summary.slice(0, 100)} ...</p>
-        <div className='flex justify-between px-2 lg:items-end'>
-          <p>{timeAgo.format(new Date(date))}</p>
-          <PrimaryButton title={'Read More'} />
-        </div>
-      </div>
-    </div>
-  )
-}
+import SearchBar from './SearchBar'
+import EventCard from './EventCard'
 
 const FeedPage = () => {
   const results = [
@@ -114,7 +56,6 @@ const FeedPage = () => {
       <InNavbar />
       <section className='py-12 px-[2rem]'>
         <div className='flex flex-col gap-3 max-w-[1200px] m-auto'>
-
           {/* search bar  */}
           <div className='flex flex-col gap-3 md:py-[90px]'>
             <h2 className='text-4xl font-semibold text-center'>
