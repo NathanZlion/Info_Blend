@@ -13,6 +13,8 @@ export default function InNavbar() {
 
   return (
     <>
+      <div className='w-5 h-[5rem]'></div>
+
       <div className={'fixed top-0 left-0 w-screen z-10 '}>
         {/* mobile  */}
         <div className='w-full md:hidden'>

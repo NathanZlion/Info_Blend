@@ -4,6 +4,9 @@ const FeedPage = () => {
   return (
     <main>
       <InNavbar />
+      <section>
+        <div> Feed </div>
+      </section>
       <div> Event </div>
     </main>
   )
