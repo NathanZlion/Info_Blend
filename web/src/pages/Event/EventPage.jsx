@@ -1,16 +1,9 @@
-// import { Link } from "react-router-dom";
-import useEmblaCarousel from 'embla-carousel-react'
+
 import InNavbar from '../../components/InNavbar'
-import {
-  IoMdArrowBack,
-  IoMdArrowForward,
-  IoMdArrowUp,
-  IoMdArrowDown,
-} from 'react-icons/io'
-import { FaExternalLinkAlt } from 'react-icons/fa'
-import PrimaryButton from '../../components/PrimaryButton'
+import Gallery from './Gallery'
+import ArticleView from './ArticleView'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import SideBar from './SideBar'
 
 const EventPage = () => {
   const eventDetail = {
@@ -205,165 +198,10 @@ const EventPage = () => {
   )
 }
 
-function Gallery({ imageUrls }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel()
-  return (
-    <div className='flex flex-col gap-3'>
-      <div ref={emblaRef} className='overflow-hidden'>
-        <div className='flex gap-3 cursor-pointer'>
-          {imageUrls.map((imageUrl, i) => (
-            <img
-              key={i}
-              src={imageUrl}
-              className='max-w-full h-[500px] object-cover rounded-3'
-            />
-          ))}
-        </div>
-      </div>
 
-      <div className='flex justify-center gap-3'>
-        <button onClick={() => emblaApi?.scrollPrev()}>
-          <IoMdArrowBack />
-        </button>
-        <button onClick={() => emblaApi?.scrollNext()}>
-          <IoMdArrowForward />
-        </button>
-      </div>
-    </div>
-  )
-}
 
-function ArticleView({ articleIndex, articles, onSelectArticle }) {
-  const article = articles[articleIndex]
-  const { sourceName, title, url, body, date } = article
-  return (
-    <section>
-      <p className='text-[#E47500] font-bold pb-3'>
-        {sourceName.toUpperCase()}
-      </p>
 
-      <div className='md:flex gap-[6rem]'>
-        <div className='flex-[2] flex flex-col gap-3'>
-          <h2 className='font-semibold text-2xl'>{title}</h2>
 
-          <a className='flex gap-[0.5rem] items-center font-light' href={url} target='_blank'>
-            Read on {sourceName} <FaExternalLinkAlt className='h-[0.8rem]' />
-          </a>
 
-          <p className='font-light'>{new Date(date).toDateString()}</p>
-
-          <p> {body}</p>
-        </div>
-
-        <div className='flex-1 hidden md:block'>
-          <SideBar
-            article={article}
-            articles={articles}
-            onSelectArticle={onSelectArticle}
-          />
-        </div>
-      </div>
-      <BottomDrawer
-        article={article}
-        articles={articles}
-        onSelectArticle={onSelectArticle}
-      />
-    </section>
-  )
-}
-
-function BottomDrawer({ article, articles, onSelectArticle }) {
-  const [isOpen, setIsOpen] = useState(false)
-  return (
-    <motion.div
-      className={`
-      md:hidden shadow-2xl
-      fixed bottom-0 left-0 w-screen bg-white
-      border rounded-5 z-10
-    `}
-      initial={{ y: 'calc(100% - 3rem)' }}
-      animate={{ y: isOpen ? 'calc(22%)' : 'calc(94%)' }}
-    >
-      <button className=' p-3 w-full' onClick={() => setIsOpen(!isOpen)}>
-        <div className='flex justify-center'>
-          {isOpen ? <IoMdArrowDown /> : <IoMdArrowUp />}
-        </div>
-      </button>
-
-      <div className='flex flex-col gap-3 '>
-        <p className='font-semibold text-2xl text-center'>Choose Article</p>
-        <div className={`
-          py-3 flex flex-col gap-3 items-center 
-          max-h-[50vh] overflow-y-scroll
-          border-t border-b
-        `}>
-          {articles.map((ithArticle, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setIsOpen(false)
-                onSelectArticle(i)
-              }}
-              className={`rounded text-start px-2 py-1  ${
-                ithArticle.uri === article.uri
-                  ? 'bg-[#E47500] text-white'
-                  : ' font-light'
-              }`}
-            >
-              {ithArticle.sourceName}
-            </button>
-          ))}
-        </div>
-
-        <div className='flex justify-center pb-3'>
-          <PrimaryButton
-            title={
-              <>
-                <span>Compare Articles</span>{' '}
-                <span className='pl-3 text-xs'>BETA</span>
-              </>
-            }
-          />
-        </div>
-
-        <div className='h-[10rem]'></div>
-      </div>
-    </motion.div>
-  )
-}
-
-function SideBar({ article, articles, onSelectArticle }) {
-  return (
-    <div className='flex flex-col gap-3 '>
-      <p className='font-semibold text-2xl'>Choose Article</p>
-      <div className='py-3 flex flex-col gap-3 items-start '>
-        {articles.map((ithArticle, i) => (
-          <button
-            key={i}
-            onClick={() => onSelectArticle(i)}
-            className={`rounded text-start px-2 py-1  ${
-              ithArticle.uri === article.uri
-                ? 'bg-[#E47500] text-white'
-                : ' font-light'
-            }`}
-          >
-            {ithArticle.sourceName}
-          </button>
-        ))}
-      </div>
-
-      <div>
-        <PrimaryButton
-          title={
-            <>
-              <span>Compare Articles</span>{' '}
-              <span className='pl-3 text-xs'>BETA</span>
-            </>
-          }
-        />
-      </div>
-    </div>
-  )
-}
 
 export default EventPage
