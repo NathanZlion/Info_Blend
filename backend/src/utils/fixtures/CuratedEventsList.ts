@@ -31,7 +31,7 @@ export const curatedEventsList: {
         'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HDMKFK6LTOE2P2JSHCZQVADW3A_size-normalized.jpg&w=1440',
       ],
     },
-    {
+    { 
       uri: 'eng-8875046',
       title: 'Russia attacks Ukraine grain port ahead of Putin-Erdogan talks',
       summary:
