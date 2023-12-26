@@ -5,7 +5,7 @@ export default function Footer () {
         <div className="container">
           <div className="row gap-3 justify-between">
             <div className="col-3 row">
-              <img className="col-12 w-50 m-10" src="../public/svg/logo-no-background.svg" />
+              <img className="col-12 w-50 m-10" src="../../public/svg/logo-no-background.svg" />
               <div className="col-12 text-start"> Make the world a better place!  </div>
             </div>
             <div className="col-4 row">
@@ -39,12 +39,12 @@ export default function Footer () {
 }
 
 
-function SocialMediaIcon (props) {
+function SocialMediaIcon ({src, href}) {
     return (
-        <a className="border border-yellow-50 bg-light rounded-full p-1 h-10" href={props.href}>
-            <img src={props.src} alt="" srcset="" className="w-8 h-8"/>
+        <a className="border border-yellow-50 bg-light rounded-full p-1 h-10" href={href}>
+            <img src={src} alt="" srcset="" className="w-8 h-8"/>
         </a>
-    )
+    );
 }
 
 
@@ -59,6 +59,5 @@ function CopyRight () {
             </div>
             </div>
         </div>
-
     )
 }   
