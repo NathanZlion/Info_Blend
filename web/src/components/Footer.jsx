@@ -5,7 +5,7 @@ export default function Footer () {
         <div className="container">
           <div className="row gap-3 justify-between">
             <div className="col-3 row">
-              <img className="col-12 w-50 m-10" src="../../public/svg/logo-no-background.svg" />
+              <img className="col-12 w-50 m-10" src="/svg/logo-no-background.svg" />
               <div className="col-12 text-start"> Make the world a better place!  </div>
             </div>
             <div className="col-4 row">
@@ -24,9 +24,9 @@ export default function Footer () {
             <div className="col-3 flex justify-items-center content-center items-center">
                 <div className="m-auto flex justify-center align-middle gap-3 ">
 
-                    <SocialMediaIcon href="https://www.facebook.com/" src="../../public/svg/facebook-logo.svg" />
-                    <SocialMediaIcon href="https://www.github.com/" src="../../public/svg/github-logo.svg" />
-                    <SocialMediaIcon href="https://www.linkedin.com/" src="../../public/svg/linkedin-logo.svg" />
+                    <SocialMediaIcon href="https://www.facebook.com/" src="/svg/facebook-logo.svg" />
+                    <SocialMediaIcon href="https://www.github.com/" src="/svg/github-logo.svg" />
+                    <SocialMediaIcon href="https://www.linkedin.com/" src="/svg/linkedin-logo.svg" />
                 </div>
             </div>
           </div>

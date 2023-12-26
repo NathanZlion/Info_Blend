@@ -5,6 +5,7 @@ import Signup from "./pages/Signup/SignupPage";
 import Login from "./pages/Login/LoginPage";
 import Feeds from "./pages/Feeds/Feeds";
 import React from "react";
+import Comparison from "./pages/Comparision/Comparison";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/event/:id",
     element: <EventPage />,
+  },
+  {
+    path: "compare/event/:id",
+    element: <Comparison />,
   },
 ]);
 
