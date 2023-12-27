@@ -6,7 +6,7 @@ const userRouter = express.Router();
 
 userRouter.post("/register", userControllers.register);
 userRouter.post("/login", userControllers.login);
-userRouter.get("/sendcode", userControllers.sendCode);
+userRouter.post("/sendcode", userControllers.sendCode);
 userRouter.post("/verifyemail", userControllers.verifyEmail);
 userRouter.get("/getme", userControllers.getUser);
 userRouter.patch("/", userControllers.updateUser);

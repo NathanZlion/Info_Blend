@@ -1,11 +1,26 @@
 import PrimaryButton from '../../components/PrimaryButton'
+import { useState } from 'react'
+import { verifyCode } from '../../services/user'
+import LoadingSpinner from '../../components/LoadingSpinner'
 
-export default function VerifyCode({ next, back }) {
-  const handleSubmit = (e) => {
+export default function VerifyCode({ email, next, back }) {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(e.target.code.value)
-
-    next()
+    const verificationCode = e.target.code.value
+    try {
+      setIsLoading(true)
+      const { token: signupToken } = await verifyCode({
+        email,
+        verificationCode,
+      })
+      next(signupToken)
+    } catch (error) {
+      alert(error.message)
+    } finally {
+      setIsLoading(false)
+    }
   }
   return (
     <section className='px-[2rem]'>
@@ -19,14 +34,23 @@ export default function VerifyCode({ next, back }) {
           <input
             type='text'
             name='code'
-            // required
+            required
             className='w-full border rounded-[9px] p-3 mt-[10px]'
           />
         </div>
 
         <div className='flex justify-between'>
-          <PrimaryButton title={'Back'} onClick={back} />
-          <PrimaryButton title={'Next'} type='submit' />
+          {isLoading ? (
+            <div className='flex items-center gap-3'>
+              <LoadingSpinner />
+              <p>Checking Verification Code</p>
+            </div>
+          ) : (
+            <>
+              <PrimaryButton title={'Back'} onClick={back} />
+              <PrimaryButton title={'Next'} type='submit' />
+            </>
+          )}
         </div>
       </form>
     </section>

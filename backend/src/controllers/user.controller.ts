@@ -2,7 +2,7 @@ import User from "../models/user.model";
 import UnverifiedEmail from "../models/unverifiedUserEmail.model";
 import bcrypt from "bcryptjs";
 import Validator from "validator";
-import { PasswordNotStrongEnoughError, checkPasswordStrength } from "../utils/validations/custom_validators";
+import { InvalidInputError , checkPasswordStrength } from "../utils/validations/custom_validators";
 import jwt from "jsonwebtoken";
 import { getTokenFromRequest, getUserFromToken } from "../middleware/auth";
 import { constants } from "../utils/constants";
@@ -131,7 +131,7 @@ export class userControllers {
 
 
             const { email: tokenEmail }: jwt.JwtPayload = jwt.verify(registrationToken, process.env.EMAIL_JWT_SECRET!) as jwt.JwtPayload;
-            console.log(tokenEmail)
+
             if (email !== tokenEmail) {
                 res.status(400).json({ message: "Invalid token" });
                 return;
@@ -160,7 +160,7 @@ export class userControllers {
             });
         } catch (error) {
             console.log(error);
-            if (error instanceof PasswordNotStrongEnoughError) {
+            if (error instanceof InvalidInputError) {
                 res.status(400).json({ message: error.message });
             } else {
                 res.status(500).json({ message: "Something went wrong while registering." });
@@ -246,7 +246,7 @@ export class userControllers {
 
     static async updateUser(req: Request, res: Response) {
         try {
-            const { userName, interests, country } = req.body;
+            const { userName, password, interests, country } = req.body;
             const token = getTokenFromRequest(req);
 
             if (!token) {
@@ -260,11 +260,21 @@ export class userControllers {
                 res.status(400).json({ message: "Unauthorized" });
                 return;
             }
+            
+            // can update username, interests, password and country
+            existingUser.userName = userName ? userName : existingUser.userName;
+            existingUser.interests = interests ? interests : existingUser.interests;
+            if (!country) {
+                throw new InvalidInputError('Please select your country')
+            }
+            existingUser.country = country ? country : existingUser.country;
 
-            // can update username, interests and country
-            existingUser.userName = userName ?? existingUser.userName;
-            existingUser.interests = interests ?? existingUser.interests;
-            existingUser.country = country ?? existingUser.country;
+            if (password) {
+                checkPasswordStrength(password);
+                const salt = await bcrypt.genSalt(10);
+                const hashedPassword = await bcrypt.hash(password, salt);
+                existingUser.password = hashedPassword;
+            }
 
             await existingUser.save();
 
@@ -277,9 +287,13 @@ export class userControllers {
                 }
             });
         } catch (error) {
-            console.info(error);
-            res.status(500).json({ message: "Something went wrong while updating user." });
+            if (error instanceof InvalidInputError) {
+                res.status(400).json({ message: error.message });
+            } else {
+                res.status(500).json({ message: "Something went wrong while registering." });
+            }
         }
+
     }
 
 

@@ -30,6 +30,7 @@ export const interests = Object.freeze([
 ])
 
 export const countries = Object.freeze([
+  { title: 'Select Country', name: ''},
   { title: 'Afghanistan', name: 'Afghanistan' },
   { title: 'Åland Islands', name: 'Åland Islands' },
   { title: 'Albania', name: 'Albania' },

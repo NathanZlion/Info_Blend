@@ -1,11 +1,22 @@
 import PrimaryButton from '../../components/PrimaryButton'
+import { sendVerificationCode } from '../../services/user'
+import { useState } from 'react'
+import LoadingSpinner from '../../components/LoadingSpinner'
 
 export default function SendCode({ next }) {
-  const handleSubmit = (e) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(e.target.email.value)
-
-    next()
+    const email = e.target.email.value
+    try {
+      setIsLoading(true)
+      await sendVerificationCode(email)
+      next(email)
+    } catch (error) {
+      alert(error.message)
+    } finally {
+      setIsLoading(false)
+    }
   }
   return (
     <section className='px-[2rem]'>
@@ -21,13 +32,20 @@ export default function SendCode({ next }) {
           <input
             type='email'
             name='email'
-            // required
+            required
             className='w-full border rounded-[9px] p-3 mt-[10px]'
           />
         </div>
 
         <div className='flex justify-end'>
-          <PrimaryButton title={'Send Verfification Code'} type='submit' />
+          {isLoading ? (
+            <div className='flex items-center gap-3'>
+              <LoadingSpinner />
+              <p>Sending Email</p>
+            </div>
+          ) : (
+            <PrimaryButton title={'Send Verfification Code'} type='submit' />
+          )}
         </div>
       </form>
     </section>

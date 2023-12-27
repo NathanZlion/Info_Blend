@@ -7,15 +7,31 @@ import Regester from './Regester'
 
 const Signup = () => {
   const [step, setStep] = useState(1)
+  const [email, setEmail] = useState(null)
+  const [signupToken, setSignupToken] = useState(null)
+
+  const sendCodeNext = (email) => {
+    setEmail(email)
+    setStep(2)
+  }
+
+  const verifyCodeNext = (signupToken) => {
+    setSignupToken(signupToken)
+    setStep(3)
+  }
 
   return (
     <main className='bg-[#F5F5F5] min-h-screen'>
       <OutNavbar />
-      {step === 1 && <SendCode next={() => setStep(2)} />}
+      {step === 1 && <SendCode next={sendCodeNext} />}
       {step === 2 && (
-        <VerifyCode next={() => setStep(3)} back={() => setStep(1)} />
+        <VerifyCode
+          email={email}
+          next={verifyCodeNext}
+          back={() => setStep(1)}
+        />
       )}
-      {step === 3 && <Regester />}
+      {step === 3 && <Regester email={email} signupToken={signupToken} />}
     </main>
   )
 }

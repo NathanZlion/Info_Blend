@@ -4,10 +4,6 @@ import SMTPConnection from "nodemailer/lib/smtp-connection";
 
 configDotenv(); 
 
-console.log(process.env.EMAIL_HOST);
-console.log(process.env.EMAIL_PORT);
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASSWORD);
 
 // trasporter to send email
 const transporter = createTransport({

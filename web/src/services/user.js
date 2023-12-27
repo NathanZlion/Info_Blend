@@ -23,7 +23,7 @@ function getJwt() {
 export async function sendVerificationCode(email) {
   const endPoint = `${serverPath}/user/sendcode`
   const res = await fetch(endPoint, {
-    method: 'GET',
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email }),
   })
@@ -54,14 +54,14 @@ export async function regester({
   password,
   interests,
   country,
-  registrationToken,
+  signupToken,
 }) {
   const endPoint = `${serverPath}/user/register`
   const res = await fetch(endPoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${registrationToken}`,
+      Authorization: `Bearer ${signupToken}`,
     },
     body: JSON.stringify({ userName, email, password, interests, country }),
   })
@@ -103,25 +103,29 @@ export async function getProfile() {
 
   await errorIfNotOk(res)
   const { token, user } = await res.json()
-  const { userName: name, email, interests, country } = user
-  return { name, email, interests, country }
+  const { userName: name, email, password, interests, country } = user
+  return { name, email, password, interests, country }
 }
 
-export async function updateProfile({ userName, interests, country }) {
-  const endPoint = `${serverPath}/user/updateprofile`
+export async function updateProfile({ userName, interests, password, country }) {
+  const endPoint = `${serverPath}/user`
   const res = await fetch(endPoint, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getJwt()}`,
     },
-    body: JSON.stringify({ userName, interests, country }),
+    body: JSON.stringify({ userName, interests, country, password}),
   })
 
   await errorIfNotOk(res)
   const { token, user } = await res.json()
-  const { userName: name, email, interests, country } = user
-  return { name, email, interests, country }
+  return {
+    name: user.userName,
+    email: user.email,
+    interests: user.interests,
+    country: user.country,
+  }
 }
 
 //UNTESTED ON POSTMAN

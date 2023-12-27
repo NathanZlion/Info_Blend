@@ -1,4 +1,7 @@
-export default function Checkbox({ title, group, value, checked }) {
+import { useState } from 'react'
+
+export default function Checkbox({ title, group, value, defaultChecked, onChanged }) {
+
   return (
     <div className=''>
       <label>
@@ -6,8 +9,9 @@ export default function Checkbox({ title, group, value, checked }) {
           type='checkbox'
           name={group}
           value={value}
-          defaultChecked={checked}
+          checked={defaultChecked}
           className='scale-[1.2]'
+          onChange={() => onChanged(value)}
         />
         <span className='pl-2'>{title}</span>
       </label>
