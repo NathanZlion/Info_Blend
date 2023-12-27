@@ -1,6 +1,11 @@
 import OutNavbar from '../../components/OutNavbar'
 import PrimaryButton from '../../components/PrimaryButton'
 import { useState } from 'react'
+import Checkbox from '../../components/Checkbox'
+import {
+  interests as allInterests,
+  countries,
+} from '../../utils/country-and-interests'
 
 function SendCode({ next }) {
   const handleSubmit = (e) => {
@@ -69,55 +74,7 @@ function VerifyCode({ next, back }) {
   )
 }
 
-function Checkbox({ title, group, value }) {
-  return (
-    <div className=''>
-      <label>
-        <input
-          type='checkbox'
-          name={group}
-          value={value}
-          className='scale-[1.2]'
-        />
-        <span className='pl-2'>{title}</span>
-      </label>
-    </div>
-  )
-}
-
 function Regester({ email, code }) {
-  const allInterests = [
-    { title: 'Politics', name: 'politics' },
-    { title: 'Politics', name: 'politics' },
-    { title: 'Politics', name: 'politics' },
-    { title: 'Politics', name: 'politics' },
-    { title: 'Politics', name: 'politics' },
-    { title: 'Politics', name: 'politics' },
-    { title: 'Politics', name: 'politics' },
-  ]
-
-  const countries = [
-    {
-      title: 'Ethiopia',
-      name: 'ethiopia',
-    },
-    {
-      title: 'Kenya',
-      name: 'kenya',
-    },
-    {
-      title: 'Kenya',
-      name: 'kenya',
-    },
-    {
-      title: 'Kenya',
-      name: 'kenya',
-    },
-    {
-      title: 'Kenya',
-      name: 'kenya',
-    },
-  ]
   return (
     <section className='px-[2rem]'>
       <form className='max-w-[500px] m-auto flex flex-col gap-[50px] py-[54px]'>

@@ -6,6 +6,8 @@ import Login from "./pages/Login/LoginPage";
 import Feeds from "./pages/Feeds/Feeds";
 import React from "react";
 import Comparison from "./pages/Comparision/Comparison";
+import Preferences from "./pages/Preferences/Preferences";
+
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "compare/event/:id",
     element: <Comparison />,
+  },
+  {
+    path: "/preferences",
+    element: <Preferences />,
   },
 ]);
 
