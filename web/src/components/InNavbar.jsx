@@ -42,7 +42,7 @@ export default function InNavbar() {
           >
             <div
               className={`
-              flex-[3] h-screen text-white bg-[#e47600d7] backdrop-blur
+              flex-[3] h-screen text-white bg-[#E47500] shadow-2xl
               flex flex-col justify-between items-center py-[3rem]`}
             >
               <Link className='font-bold text-[25px]' to={'/'}>
@@ -51,7 +51,7 @@ export default function InNavbar() {
               <nav>
                 <ul className='flex flex-col gap-[60px] font-[600] text-[20px] list-disc'>
                   {links.map(({ page, link }, i) => (
-                    <li key={i} className='hover:text-[#f08b00] transition-all'>
+                    <li key={i}>
                       <a href={link}>{page}</a>
                     </li>
                   ))}

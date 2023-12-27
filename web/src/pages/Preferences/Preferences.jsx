@@ -16,13 +16,13 @@ const Preferences = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
-    
+
     const name = formData.get('name')
     const password = formData.get('password')
     const interests = formData.getAll('interests')
     const country = formData.get('country')
 
-    alert(JSON.stringify({ name, password, interests, country }))
+    alert(JSON.stringify({ email, name, password, interests, country }))
   }
 
   return (
@@ -45,7 +45,7 @@ const Preferences = () => {
                 name='email'
                 // required
                 disabled
-                className='w-full border rounded-[9px] p-2'
+                className='w-full border rounded-[9px] p-2 text-[grey]'
                 defaultValue={email}
               />
             </div>

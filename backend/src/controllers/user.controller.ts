@@ -103,6 +103,7 @@ export class userControllers {
 
             res.status(200).json({ token, message: "Email verified successfully" });
         } catch (error) {
+            console.error(error);
             res.status(500).json({ message: "Something went wrong while verifying email." });
         }
     }
@@ -130,7 +131,7 @@ export class userControllers {
 
 
             const { email: tokenEmail }: jwt.JwtPayload = jwt.verify(registrationToken, process.env.EMAIL_JWT_SECRET!) as jwt.JwtPayload;
-
+            console.log(tokenEmail)
             if (email !== tokenEmail) {
                 res.status(400).json({ message: "Invalid token" });
                 return;
