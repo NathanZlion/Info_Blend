@@ -1,5 +1,6 @@
 import PrimaryButton from '../../components/PrimaryButton'
 import timeAgo from '../../utils/time-ago'
+import { Link } from 'react-router-dom'
 
 export default function EventCard({ uri, title, summary, date, imageUrls }) {
   return (
@@ -33,7 +34,9 @@ export default function EventCard({ uri, title, summary, date, imageUrls }) {
         </p>
         <div className='flex justify-between px-2 lg:items-end'>
           <p>{timeAgo.format(new Date(date))}</p>
-          <PrimaryButton title={'Read More'} />
+          <Link to={'/events/'+uri}>
+            <PrimaryButton title={'Read More'} />
+          </Link>
         </div>
       </div>
     </div>

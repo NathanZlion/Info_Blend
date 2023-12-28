@@ -12,12 +12,12 @@ export default function Footer () {
             <div className="flex justify-items-center content-center items-center">
 
               <div className="col-6 flex flex-col gap-3">
-                <div classname="mb-8 text-center font-bold text-xl"> ABOUT US </div>
-                <div classname="text-center">a bunch of college students.</div>
+                <div className="mb-8 text-center font-bold text-xl"> ABOUT US </div>
+                <div className="text-center">a bunch of college students.</div>
               </div>
               <div className="col-6 flex flex-col gap-3">
-                <div classname="mb-8 text-center font-bold text-xl"> CONTACT US </div>
-                <div classname="text-center">Contact us with out contacts.</div>
+                <div className="mb-8 text-center font-bold text-xl"> CONTACT US </div>
+                <div className="text-center">Contact us with out contacts.</div>
               </div>
             </div>
             </div>
@@ -42,7 +42,7 @@ export default function Footer () {
 function SocialMediaIcon ({src, href}) {
     return (
         <a className="border border-yellow-50 bg-light rounded-full p-1 h-10" href={href}>
-            <img src={src} alt="" srcset="" className="w-8 h-8"/>
+            <img src={src} alt=""  className="w-8 h-8"/>
         </a>
     );
 }

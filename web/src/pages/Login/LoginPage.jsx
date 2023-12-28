@@ -1,15 +1,28 @@
 import OutNavbar from '../../components/OutNavbar'
 import PrimaryButton from '../../components/PrimaryButton'
 import { useNavigate } from 'react-router-dom'
+import { login } from '../../services/user'
+import { useState } from 'react'
+import LoadingSpinner from '../../components/LoadingSpinner'
+
 const Login = () => {
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
   const onSubmit = async (e) => {
     e.preventDefault()
     const email = e.target.email.value
     const password = e.target.password.value
+    try {
+      setIsLoading(true)
+      await login({email, password})
+      navigate('/feed')
+    } catch (err) {
+      alert(err.message)
+    } finally {
+      setIsLoading(false)
+    }
 
     //go to home page
-    navigate('/feed')
   }
   return (
     <main className='bg-[#F5F5F5] min-h-screen'>
@@ -40,7 +53,14 @@ const Login = () => {
           </div>
 
           <div className='flex justify-end'>
-            <PrimaryButton title={'Login'} type='submit' />
+            {isLoading ? (
+              <div className='flex items-center gap-3'>
+                <LoadingSpinner />
+                <p>Loggin In</p>
+              </div>
+            ) : (
+              <PrimaryButton title={'Login'} type='submit' />
+            )}
           </div>
         </form>
       </section>

@@ -2,13 +2,19 @@ import { IoMdArrowUp, IoMdArrowDown } from 'react-icons/io'
 import PrimaryButton from '../../components/PrimaryButton'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
+
 
 export default function BottomDrawer({ article, articles, onSelectArticle }) {
   const [isOpen, setIsOpen] = useState(false)
+  const { id } = useParams()
+
   return (
     <motion.div
+    style={{boxShadow:'0 0 20px 0 rgba(0,0,0,0.2)'}}
       className={`
-        shadow-2xl
         fixed bottom-0 left-0 w-screen bg-white
         border rounded-5 z-10
       `}
@@ -49,6 +55,7 @@ export default function BottomDrawer({ article, articles, onSelectArticle }) {
         </div>
 
         <div className='flex justify-center pb-3'>
+        <Link to={'/compare/event/' + id}>
           <PrimaryButton
             title={
               <>
@@ -57,6 +64,7 @@ export default function BottomDrawer({ article, articles, onSelectArticle }) {
               </>
             }
           />
+        </Link>
         </div>
 
         <div className='h-[10rem]'></div>

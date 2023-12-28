@@ -1,23 +1,7 @@
 import serverPath from './server-path'
-
+import { getJwt, storeJwt, removeJwt } from './jwt'
+import errorIfNotOk  from './error-if-not-ok'
 // File level Utils
-async function errorIfNotOk(res) {
-  if (!res.ok) {
-    const { message } = await res.json()
-    throw new Error(message)
-  }
-}
-function storeJwt(jwtToken) {
-  localStorage.setItem('jwt', jwtToken)
-}
-
-function removeJwt() {
-  localStorage.removeItem('jwt')
-}
-
-function getJwt() {
-  return localStorage.getItem('jwt')
-}
 
 // Regestration
 export async function sendVerificationCode(email) {

@@ -1,46 +1,51 @@
-import { useState } from "react";
-import InNavbar from "../../components/InNavbar";
-import ArticleComparison from "./Components/ArticleComparison";
-import CompareHeader from "./Components/Compare-header";
-import WarningFooter from "./Components/WarningFooter";
-
-
-
+import { useEffect, useState } from 'react'
+import InNavbar from '../../components/InNavbar'
+import ArticleComparison from './Components/ArticleComparison'
+import CompareHeader from './Components/Compare-header'
+import WarningFooter from './Components/WarningFooter'
+import { useParams } from 'react-router-dom'
+import { fetchArticlesByEventId } from '../../services/business'
 
 export default function Comparison() {
-  const [article, setArticle]= useState();
-  const [newsource1, changeNewsSource1]= useState(null);
-  const [newsource2, changeNewsSource2]= useState(null);
-  
-  {/* 
-  - The event id should be fetched first.
-  - side 1 selected
-  - side 2 selected
-  */}
-  return (
-    <main className="absolute w-full border min-h-screen border-black flex flex-col">
-      <InNavbar />
+  const [article1, setArticle1] = useState(null)
+  const [article2, setArticle2] = useState(null)
+  const [articleOptions, setArticleOptions] = useState(null)
+  const [comparison, setComparison] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const { id } = useParams()
 
-      <h2>Compare Articles</h2>
+  useEffect(() => {
+    const fetch = async () => {
+      const response = await fetchArticlesByEventId(id)
+      setArticleOptions(response)
+    }
+
+    fetch()
+  }, [])
+
+  return (
+    <main className='min-h-screen container-sm flex flex-col gap-6'>
+      <InNavbar />
+      <h2 className='text-4xl font-semibold text-center'>Compare Articles</h2>
 
       {/* The selection bar where you select news sources in a dropdown*/}
-      <div className="flex-1">
+      <div>
         <CompareHeader
-          newsource1={newsource1}
-          newsource2={newsource2}
-          changeNewsSource1={changeNewsSource1}
-          changeNewsSource2={changeNewsSource2}
+          article1={article1}
+          article2={article2}
+          changeNewsSource1={setArticle1}
+          changeNewsSource2={setArticle2}
+          setComparison={setComparison}
+          setIsLoading={setIsLoading}
+          articleOptions={articleOptions}
         />
       </div>
 
-      {/* The actual comparison content */}
-      <ArticleComparison
-        className="
-        h-full
-      "
-      />
+      <div className='flex-1 flex flex-col border rounded-3xl overflow-hidden'>
+        <ArticleComparison isLoading={isLoading} comparison={comparison} />
+      </div>
 
       <WarningFooter />
     </main>
-  );
+  )
 }

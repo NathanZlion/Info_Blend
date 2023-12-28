@@ -7,12 +7,13 @@ export const eventDetail: {
   message: 'Successfully got event detail',
   event: {
     uri: 'eng-8843762',
-    title: 'Ethiopia shaken by a new and growing rebellion in Amhara',
+    title: 'AU voices ‘great concern’ over deadly Libya fighting',
     summary:
-      "Two weeks after irregular militia fighters called the Fano seized several towns and cities in Amhara, Ethiopia's second-biggest region, the barricades have been cleared from the streets and an uneasy calm has been restored by the federal military. The fighting was the fiercest to grip Ethiopia since a November ceasefire ended the two-year conflict in the next-door region of Tigray.  'Prime Minister Abiy Ahmed had set his sights on welcoming back foreign investors and kickstarting the economy. Inst",
+      "Two weeks after irregular militia fighters called the Abebe seized several towns and cities in Amhara, Ethiopia's second-biggest region, the barricades have been cleared from the streets and an uneasy calm has been restored by the federal military. The fighting was the fiercest to grip Ethiopia since a November ceasefire ended the two-year conflict in the next-door region of Beirut.  'Prime Minister Kebede Ahmed had set his sights on welcoming back foreign investors and kickstarting the economy. Inst",
     date: '2023-08-20',
     imageUrls: [
-      'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+      'https://cdn.punchng.com/wp-content/uploads/2018/03/21172715/Moussa-Faki-Mahamat.jpg',
+      'https://static.zawya.com/view/acePublic/alias/contentid/image.4486_2022_02_18/0/4486_2022_02_18.webp?f=3%3A2&q=0.75&w=640',
     ],
   },
   articles: [
@@ -25,7 +26,7 @@ export const eventDetail: {
       time: '09:54:24',
       sourceName: 'Punch Newspapers',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7681348346',
@@ -42,7 +43,7 @@ export const eventDetail: {
       time: '09:13:07',
       sourceName: 'Zawya.com',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7681730620',
@@ -60,7 +61,7 @@ export const eventDetail: {
       time: '14:17:56',
       sourceName: 'english.news.cn',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7681711650',
@@ -81,7 +82,7 @@ export const eventDetail: {
       time: '14:03:23',
       sourceName: 'The South African',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7681329471',
@@ -96,7 +97,7 @@ export const eventDetail: {
       time: '09:01:19',
       sourceName: 'Social News XYZ',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7683332489',
@@ -111,7 +112,7 @@ export const eventDetail: {
       time: '17:43:30',
       sourceName: 'South Africa Today',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7681717616',
@@ -125,7 +126,7 @@ export const eventDetail: {
       time: '14:06:06',
       sourceName: 'nampa.org',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7681936487',
@@ -137,7 +138,7 @@ export const eventDetail: {
       time: '17:16:07',
       sourceName: 'Breaking News',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7681789206',
@@ -148,7 +149,7 @@ export const eventDetail: {
       time: '15:06:40',
       sourceName: 'Standard Digital News - Kenya',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
     {
       uri: '7682054770',
@@ -159,7 +160,7 @@ export const eventDetail: {
       time: '19:22:19',
       sourceName: 'Agencia Informativa Latinamericana Prensa Latina',
       sourceLogoUrl:
-        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Abiy-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
+        'https://africanarguments.org/wp-content/uploads/2023/08/Ethiopia-PM-Kebede-Ahmed-Ali-Awash-Arba-28-Jan-2023.jpg',
     },
   ],
 }

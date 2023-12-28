@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import {logout} from '../services/user'
 
 export default function InNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -50,11 +51,9 @@ export default function InNavbar() {
               </Link>
               <nav>
                 <ul className='flex flex-col gap-[60px] font-[600] text-[20px] list-disc'>
-                  {links.map(({ page, link }, i) => (
-                    <li key={i}>
-                      <a href={link}>{page}</a>
-                    </li>
-                  ))}
+                  <Link to={'/feed'}>Feed</Link>
+                  <Link to={'/preferences'}>Preferences</Link>
+                  <Link onClick={logout} to={'/'}>Log Out</Link>
                 </ul>
               </nav>
               <div></div>
@@ -70,7 +69,7 @@ export default function InNavbar() {
             <div className='flex gap-5 md:gap-[80px] items-center'>
               <Link to={'/feed'}>Feed</Link>
               <Link to={'/preferences'}>Preferences</Link>
-              <Link to={'/'}>Log Out</Link>
+              <Link onClick={logout} to={'/'}>Log Out</Link>
             </div>
           </nav>
         </div>
