@@ -31,7 +31,7 @@ export const curatedEventsList: {
         'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HDMKFK6LTOE2P2JSHCZQVADW3A_size-normalized.jpg&w=1440',
       ],
     },
-    {
+    { 
       uri: 'eng-8875046',
       title: 'Russia attacks Ukraine grain port ahead of Putin-Erdogan talks',
       summary:
@@ -58,38 +58,6 @@ export const curatedEventsList: {
         'https://dims.apnews.com/dims4/default/d4ca6c7/2147483647/strip/true/crop/8640x4860+0+450/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F89%2Fe6%2Fd34b82eb521d8908b37b2cd7de28%2Fdc4b4a5602f84c79aad9e65fed21fc7c',
         'https://media.breitbart.com/media/2023/08/GettyImages-1610888815-e1692720714209.jpg',
         'https://assets.zerohedge.com/s3fs-public/styles/16_9_max_700/public/2023-08/zdn.jpg?itok=aJ8ej_G1',
-      ],
-    },
-    {
-      uri: 'eng-8838895',
-      title:
-        "In Anne Frank's Amsterdam, Ukrainian children's war diaries go on...",
-      summary:
-        'AMSTERDAM (AP) - The city where Anne Frank wrote her World War II diary while hiding with her family from the brutal Nazi occupation is hosting an exhibition about the Ukraine war with grim echoes of her plight more than three quarters of a century later.\n' +
-        'The exhibition that opened at Amsterdam City Hall on Thursday offers a vision of the war in Ukraine as experienced by children caught in the devastating conflict.\n' +
-        `"This exhibition is about the pain through the children's eyes," Khrystyna Khran`,
-      date: '2023-08-17',
-      imageUrls: [
-        'https://bloximages.newyork1.vip.townnews.com/newsadvance.com/content/tncms/assets/v3/editorial/9/89/9890d356-4045-5839-8c8d-60287e95bdae/64df8f9ea2e40.preview.jpg?crop=1919%2C1007%2C0%2C36&resize=438%2C230&order=crop%2Cresize',
-        'https://bloximages.chicago2.vip.townnews.com/lacrossetribune.com/content/tncms/assets/v3/editorial/c/21/c21d093a-9149-5803-9fd4-ec76e0ca0e94/64df8f9b03bd4.preview.jpg?crop=1919%2C1007%2C0%2C36&resize=438%2C230&order=crop%2Cresize',
-        'https://bloximages.newyork1.vip.townnews.com/journalnow.com/content/tncms/assets/v3/editorial/4/41/4414cc2f-2d32-56ca-9a1a-8089e6780fa9/64df8f997b042.preview.jpg?crop=1919%2C1007%2C0%2C36&resize=438%2C230&order=crop%2Cresize',
-      ],
-    },
-    {
-      uri: 'eng-8864862',
-      title:
-        'Airport in western Russia attacked by drones, aircraft damaged: Reports',
-      summary:
-        'State news agency TASS cited reports that four Ilyushin Il-76 heavy transport planes were damaged in the drone attack.\n' +
-        '\n' +
-        "Russian transport aircraft have been reported damaged in a drone attack on an airport in Russia's western city of Pskov - located near the borders of Latvia and Estonia - where explosions, a large blaze and gunfire were reported, a local official and state media said.\n" +
-        '\n' +
-        "Russia's state-run TASS news agency, quoting emergency services, said early on Wednesday morning that four Il-7",
-      date: '2023-08-30',
-      imageUrls: [
-        'https://koreatimes-bucket.s3.ap-northeast-2.amazonaws.com/IMAGE/upload/newsV2/images/202308/feccc0c9a90647358e95bfdb48c530be.jpg',
-        'https://i.guim.co.uk/img/media/8ad02abc5855caa63419463e0d9b71848d67dafd/0_338_1334_800/master/1334.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctbGl2ZS5wbmc&s=b256db9dc4de6640addc46b90866dbdb',
-        'https://www.aljazeera.com/wp-content/uploads/2023/08/Russiacrop-1693354338.jpg?resize=1200%2C675',
       ],
     },
     {

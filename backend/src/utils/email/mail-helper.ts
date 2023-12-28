@@ -2,15 +2,16 @@ import { createTransport } from "nodemailer";
 import { config as configDotenv } from "dotenv";
 import SMTPConnection from "nodemailer/lib/smtp-connection";
 
-configDotenv();
+configDotenv(); 
+
 
 // trasporter to send email
 const transporter = createTransport({
-    host: 'in-v3.mailjet.com',
+    host: process.env.EMAIL_HOST,
     port: +process.env.EMAIL_PORT!,
     auth: {
-        user: process.env.EMAIL_API_KEY,
-        pass: process.env.EMAIL_API_SECRET,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
     },
 } as SMTPConnection.Options);
 
@@ -29,7 +30,7 @@ export const sendEmail = async (
 ): Promise<void> => {
 
     const info = await transporter.sendMail({
-        from: '"Nathnael Dereje 👻" <nathandere1357@gmail.com>',
+        from: `"Infoblender (no-reply) 👻" ${process.env.EMAIL_USER}`,
         to: `${recipientEmailAddress}`,
         subject: emailSubject,
         html: emailBodyHtml as string,

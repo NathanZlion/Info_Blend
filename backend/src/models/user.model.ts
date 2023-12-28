@@ -1,20 +1,20 @@
-import mongoose, {Document} from "mongoose";
+import mongoose, { Document } from "mongoose";
 import { constants } from "../utils/constants";
 
-export interface UserDocument extends Document{
+export interface UserDocument extends Document {
     userName: string | undefined,
-    password: string ,
+    password: string,
     email: string,
-    interests:[string] | undefined,
-    country:string|undefined,
-    lastChecked:Date|undefined, 
+    interests: [string] | undefined,
+    country: string | undefined,
+    lastChecked: Date | undefined,
 }
 
 const userSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: false,
-        default: "InfoBlend User",
+        default: "_User_",
     },
     password: {
         type: String,

@@ -1,4 +1,4 @@
-import { compareArticles, getDetails, getEventFeed, searchForEvents } from "../utils/remote-functions";
+import { compareArticles, getArticles, getDetails, getEventFeed, searchForEvents } from "../utils/remote-functions";
 import { Request, Response } from 'express';
 import { Article } from "../utils/remote-functions";
 
@@ -6,7 +6,7 @@ import { Article } from "../utils/remote-functions";
  * A class to handle all news related controllers.
  */
 export class newsController {
-    /**
+    /** 
      * @param {*} req 
      * @param {*} res
      * @returns a list of curated events for the user based on the user's profile.
@@ -73,6 +73,24 @@ export class newsController {
             });
         }
     }
+
+    static async getArticlesForEvent(req: Request, res: Response) {
+        try {
+            const eventUri = req.query.eventUri as string;
+            const articles = await getArticles(eventUri);
+
+            res.status(200).json({
+                "message": "Successfully got event detail",
+                "articles": articles
+            });
+
+        } catch (error) {
+            res.status(500).json({
+                "message": "Some thing went wrong while getting event detail."
+            });
+        }
+    }
+
     /**
      * @param {*} req 
      * @param {*} res 
@@ -81,7 +99,7 @@ export class newsController {
     static async compareArticles(req: Request, res: Response) {
         try {
             const { article1, article2 }:
-                { article1: Article, article2: Article } = req.body;
+                { article1: string, article2: string } = req.body;
 
             const comparison = await compareArticles(article1, article2);
 

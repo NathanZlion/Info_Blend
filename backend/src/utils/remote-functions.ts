@@ -192,8 +192,8 @@ async function getDetails(eventUri: string) {
 }
 
 async function compareArticles(
-  article1: Article,
-  article2: Article
+  article1: string,
+  article2: string
 ) {
   // Not implemented yet
 }
@@ -210,4 +210,4 @@ function toEvents(rawEvents: Data.Event[]): Event[] {
   return events
 }
 
-export { getEventFeed, searchForEvents, getDetails, compareArticles }
+export { getEventFeed, searchForEvents, getDetails, compareArticles, getArticles }

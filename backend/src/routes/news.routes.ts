@@ -10,7 +10,8 @@ newsRouter.use(authMiddleware);
 
 newsRouter.get("/", newsController.getCuratedEvents);
 newsRouter.get("/search", newsController.searchEventsByTopic);
-newsRouter.get("/compare", newsController.compareArticles);
+newsRouter.post("/compare", newsController.compareArticles);
 newsRouter.get("/:id", newsController.getEventDetail);
+newsRouter.get("/articles/:id", newsController.getArticlesForEvent);
 
-export default newsRouter;
+export default newsRouter;  
